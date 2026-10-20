@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the-smart-boutique.vercel.app/sitemap.xml
