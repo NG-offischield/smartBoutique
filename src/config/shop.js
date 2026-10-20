@@ -41,7 +41,7 @@ export const shop = {
     tiktok: ''
   },
 
-  siteUrl: import.meta.env.VITE_SITE_URL || 'https://the-smart-boutique.vercel.app'
+  siteUrl: import.meta.env.VITE_SITE_URL || 'https://ng-offischield.github.io/smartBoutique'
 }
 
 export const fullAddress = `${shop.address.street}, ${shop.address.city}, ${shop.address.country}`

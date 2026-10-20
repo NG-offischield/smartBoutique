@@ -16,7 +16,7 @@ const routes = [
 
 const router = createRouter({
   // Mode « hash » uniquement pour les aperçus hébergés hors Vercel (VITE_ROUTER_MODE=hash)
-  history: import.meta.env.VITE_ROUTER_MODE === 'hash' ? createWebHashHistory() : createWebHistory(),
+  history: import.meta.env.VITE_ROUTER_MODE === 'hash' ? createWebHashHistory() : createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, saved) {
     if (saved) return saved

@@ -100,8 +100,7 @@ function submit() {
 a.ccard:hover { border-color: var(--brand-400); transform: translateY(-2px); box-shadow: var(--shadow); }
 .ccard > span:last-child { display: grid; gap: 2px; flex: 1; }
 .ccard small { color: var(--text-muted); }
-.ccard__icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--brand-50); color: var(--brand-500); flex-shrink: 0; }
-:root[data-theme='dark'] .ccard__icon { color: #a5b4fc; }
+.ccard__icon { width: 48px; height: 48px; border-radius: var(--radius); display: grid; place-items: center; background: var(--brand-50); color: var(--brand-ink); flex-shrink: 0; }
 .ccard__icon svg { width: 22px; height: 22px; }
 .ccard--wa .ccard__icon { background: var(--whatsapp); color: #fff; }
 .hours { display: flex; justify-content: space-between; gap: 12px; font-size: 0.9rem; color: var(--text-muted); }

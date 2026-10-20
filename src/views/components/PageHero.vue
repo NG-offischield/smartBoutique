@@ -24,5 +24,5 @@ defineProps({
 .page-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-top: 12px; }
 .page-hero p { margin: 0; max-width: 640px; }
 .crumbs { display: flex; gap: 8px; font-size: 0.85rem; color: var(--text-muted); flex-wrap: wrap; }
-.crumbs a:hover { color: var(--brand-500); text-decoration: underline; }
+.crumbs a:hover { color: var(--brand-ink); text-decoration: underline; }
 </style>

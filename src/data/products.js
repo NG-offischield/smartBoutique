@@ -22,7 +22,6 @@ export default [
     variants: [['256 Go', 1050000], ['512 Go', 1250000], ['1 To', 1450000]],
     colors: [['Orange cosmique', '#E3732D'], ['Bleu intense', '#2B3A55'], ['Argent', '#E3E4E6']],
     specs: { screen: '6,9" Super Retina XDR OLED 120 Hz', chip: 'Apple A19 Pro', ram: 12, camera: '48 + 48 + 48 Mpx', selfie: '18 Mpx', battery: '≈ 5 000 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.9, reviews: 214,
     description: 'Le plus puissant des iPhone : châssis aluminium unibody, triple capteur 48 Mpx avec zoom optique 8x et une autonomie record.'
   },
   {
@@ -31,7 +30,6 @@ export default [
     variants: [['256 Go', 925000], ['512 Go', 1100000]],
     colors: [['Orange cosmique', '#E3732D'], ['Bleu intense', '#2B3A55'], ['Argent', '#E3E4E6']],
     specs: { screen: '6,3" Super Retina XDR OLED 120 Hz', chip: 'Apple A19 Pro', ram: 12, camera: '48 + 48 + 48 Mpx', selfie: '18 Mpx', battery: '≈ 4 000 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.8, reviews: 163,
     description: 'Toute la puissance Pro dans un format compact, avec un écran ProMotion lumineux et un système photo professionnel.'
   },
   {
@@ -40,7 +38,6 @@ export default [
     variants: [['256 Go', 840000], ['512 Go', 990000]],
     colors: [['Bleu ciel', '#BFD5E8'], ['Or clair', '#EADCC2'], ['Blanc nuage', '#F2F2F0'], ['Noir sidéral', '#1F1F21']],
     specs: { screen: '6,5" Super Retina XDR OLED 120 Hz', chip: 'Apple A19 Pro', ram: 12, camera: '48 Mpx Fusion', selfie: '18 Mpx', battery: '≈ 3 100 mAh', os: 'iOS 26', network: '5G', sim: 'eSIM' },
-    rating: 4.6, reviews: 58,
     description: 'L’iPhone le plus fin jamais conçu : 5,6 mm de titane pour une prise en main incroyablement légère.'
   },
   {
@@ -49,7 +46,6 @@ export default [
     variants: [['256 Go', 650000], ['512 Go', 790000]],
     colors: [['Lavande', '#D9CDEB'], ['Sauge', '#B7C4A8'], ['Bleu brume', '#A9C1D9'], ['Blanc', '#F4F4F2'], ['Noir', '#232325']],
     specs: { screen: '6,3" Super Retina XDR OLED 120 Hz', chip: 'Apple A19', ram: 8, camera: '48 + 48 Mpx', selfie: '18 Mpx', battery: '≈ 3 700 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.8, reviews: 121,
     description: 'Écran ProMotion 120 Hz, double capteur 48 Mpx et la nouvelle caméra frontale Center Stage.'
   },
   {
@@ -58,7 +54,6 @@ export default [
     variants: [['128 Go', 520000, 575000], ['256 Go', 600000, 660000]],
     colors: [['Outremer', '#7A8FD6'], ['Sarcelle', '#88B5B1'], ['Rose', '#F0BFD3'], ['Blanc', '#F4F4F2'], ['Noir', '#232325']],
     specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A18', ram: 8, camera: '48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 560 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.7, reviews: 302,
     description: 'Bouton Action, commande de l’appareil photo et puce A18 : un excellent rapport qualité-prix chez Apple.'
   },
   {
@@ -67,7 +62,6 @@ export default [
     variants: [['128 Go', 355000], ['256 Go', 410000]],
     colors: [['Bleu', '#C9D6DF'], ['Rose', '#F2D4D7'], ['Vert', '#D0DCC7'], ['Noir', '#35393B']],
     specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A16 Bionic', ram: 6, camera: '48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 350 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.6, reviews: 187,
     description: 'Reconditionné grade A, batterie testée > 85 %. Dynamic Island et port USB-C.'
   },
   {
@@ -76,7 +70,6 @@ export default [
     variants: [['128 Go', 245000, 270000], ['256 Go', 290000]],
     colors: [['Minuit', '#232A31'], ['Lumière stellaire', '#F1EDE4'], ['Bleu', '#2F4A6B'], ['Rouge', '#BF1E2E']],
     specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A15 Bionic', ram: 4, camera: '12 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 240 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.5, reviews: 412,
     description: 'L’iPhone le plus accessible, reconditionné et testé sur 40 points de contrôle.'
   },
 
@@ -87,7 +80,6 @@ export default [
     variants: [['256 Go', 860000, 950000], ['512 Go', 990000]],
     colors: [['Titane argent', '#C9CCCE'], ['Titane noir', '#2E3033'], ['Titane gris', '#8E9196'], ['Titane bleu', '#5D7186']],
     specs: { screen: '6,9" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Elite for Galaxy', ram: 12, camera: '200 + 50 + 50 + 10 Mpx', selfie: '12 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.9, reviews: 176,
     description: 'Le roi de la photo et de la productivité : capteur 200 Mpx, S Pen intégré et Galaxy AI.'
   },
   {
@@ -96,7 +88,6 @@ export default [
     variants: [['128 Go', 560000], ['256 Go', 620000]],
     colors: [['Bleu glacier', '#B9CCE0'], ['Menthe', '#C8E1D3'], ['Marine', '#2A3550'], ['Argent', '#D9DADC']],
     specs: { screen: '6,2" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Elite for Galaxy', ram: 12, camera: '50 + 12 + 10 Mpx', selfie: '12 Mpx', battery: '4 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.7, reviews: 98,
     description: 'Compact, ultra-puissant et doté de Galaxy AI, pour une prise en main parfaite à une main.'
   },
   {
@@ -105,7 +96,6 @@ export default [
     variants: [['256 Go', 1190000], ['512 Go', 1320000]],
     colors: [['Bleu ombre', '#2E3B55'], ['Argent ombre', '#BFC3C8'], ['Noir jet', '#1B1C1E']],
     specs: { screen: '8,0" pliable + 6,5" externe, 120 Hz', chip: 'Snapdragon 8 Elite for Galaxy', ram: 12, camera: '200 + 12 + 10 Mpx', selfie: '10 Mpx', battery: '4 400 mAh', os: 'Android 16 · One UI 8', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.8, reviews: 41,
     description: 'Une tablette dans la poche : le pliable le plus fin et le plus léger de Samsung.'
   },
   {
@@ -114,7 +104,6 @@ export default [
     variants: [['256 Go', 720000], ['512 Go', 820000]],
     colors: [['Bleu ombre', '#33456B'], ['Corail', '#F08C7A'], ['Noir jet', '#1B1C1E']],
     specs: { screen: '6,9" pliable + 4,1" externe', chip: 'Exynos 2500', ram: 12, camera: '50 + 12 Mpx', selfie: '10 Mpx', battery: '4 300 mAh', os: 'Android 16 · One UI 8', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.6, reviews: 37,
     description: 'Le clapet iconique avec un grand écran externe bord à bord.'
   },
   {
@@ -123,7 +112,6 @@ export default [
     variants: [['128 Go', 255000], ['256 Go', 290000]],
     colors: [['Graphite', '#3A3B3E'], ['Gris clair', '#D6D7D9'], ['Olive', '#A7AE8C'], ['Rose', '#E8C9CF']],
     specs: { screen: '6,7" Super AMOLED 120 Hz', chip: 'Exynos 1580', ram: 8, camera: '50 + 12 + 5 Mpx', selfie: '12 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM' },
-    rating: 4.6, reviews: 154,
     description: 'Le milieu de gamme référence : 6 ans de mises à jour, recharge 45 W et IP67.'
   },
   {
@@ -132,7 +120,6 @@ export default [
     variants: [['128 Go', 205000], ['256 Go', 235000]],
     colors: [['Noir', '#2B2C2F'], ['Lavande', '#C9BEE0'], ['Blanc', '#EDEDEF']],
     specs: { screen: '6,7" Super AMOLED 120 Hz', chip: 'Snapdragon 6 Gen 3', ram: 8, camera: '50 + 8 + 5 Mpx', selfie: '12 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 89,
     description: 'Écran AMOLED superbe, 5G et résistance IP67 à prix doux.'
   },
   {
@@ -141,7 +128,6 @@ export default [
     variants: [['128 Go', 108000, 120000], ['256 Go', 128000]],
     colors: [['Noir', '#2B2C2F'], ['Gris', '#BFC1C4'], ['Vert clair', '#CFE3D1']],
     specs: { screen: '6,7" Super AMOLED 90 Hz', chip: 'MediaTek Helio G99', ram: 4, camera: '50 + 5 + 2 Mpx', selfie: '13 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '4G', sim: 'Dual SIM' },
-    rating: 4.3, reviews: 233,
     description: 'L’entrée de gamme Samsung avec 6 ans de mises à jour Android garanties.'
   },
 
@@ -152,7 +138,6 @@ export default [
     variants: [['256 Go', 545000], ['512 Go', 610000]],
     colors: [['Noir', '#1E1F21'], ['Blanc', '#F2F2F0'], ['Vert', '#8FAE98']],
     specs: { screen: '6,36" AMOLED 120 Hz', chip: 'Snapdragon 8 Elite', ram: 12, camera: '50 + 50 + 60 Mpx Leica', selfie: '32 Mpx', battery: '5 240 mAh', os: 'Android 15 · HyperOS 2', network: '5G', sim: 'Dual SIM' },
-    rating: 4.7, reviews: 67,
     description: 'Optiques Leica, Snapdragon 8 Elite et format compact premium.'
   },
   {
@@ -161,7 +146,6 @@ export default [
     variants: [['256 Go', 245000], ['512 Go', 285000]],
     colors: [['Noir minuit', '#1F2024'], ['Violet lavande', '#B9A6D9'], ['Bleu glacier', '#B8D3E6']],
     specs: { screen: '6,67" AMOLED incurvé 120 Hz', chip: 'Snapdragon 7s Gen 3', ram: 12, camera: '200 + 8 + 2 Mpx', selfie: '20 Mpx', battery: '5 110 mAh · 120 W', os: 'Android 14 · HyperOS', network: '5G', sim: 'Dual SIM' },
-    rating: 4.6, reviews: 211,
     description: 'Capteur 200 Mpx, charge 120 W en 19 min et protection IP68 : le meilleur Redmi.'
   },
   {
@@ -170,7 +154,6 @@ export default [
     variants: [['128 Go', 112000, 125000], ['256 Go', 132000]],
     colors: [['Noir', '#202124'], ['Bleu océan', '#3D6C9E'], ['Vert', '#86A890']],
     specs: { screen: '6,67" AMOLED 120 Hz', chip: 'MediaTek Helio G99-Ultra', ram: 8, camera: '108 + 2 + 2 Mpx', selfie: '20 Mpx', battery: '5 500 mAh', os: 'Android 14 · HyperOS', network: '4G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 276,
     description: 'Écran AMOLED, appareil photo 108 Mpx et grosse batterie pour moins de 130 000 FCFA.'
   },
   {
@@ -179,7 +162,6 @@ export default [
     variants: [['128 Go', 72000], ['256 Go', 85000]],
     colors: [['Noir', '#202124'], ['Bleu', '#5779B3'], ['Vert sauge', '#A8BFA6']],
     specs: { screen: '6,88" LCD 120 Hz', chip: 'MediaTek Helio G81-Ultra', ram: 4, camera: '50 Mpx', selfie: '13 Mpx', battery: '5 160 mAh', os: 'Android 14 · HyperOS', network: '4G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 198,
     description: 'Grand écran 120 Hz et autonomie solide pour un petit budget.'
   },
 
@@ -190,7 +172,6 @@ export default [
     variants: [['256 Go', 195000], ['512 Go', 225000]],
     colors: [['Noir galaxie', '#1E2026'], ['Vert émeraude', '#2F6B57'], ['Blanc glacier', '#EEF1F3']],
     specs: { screen: '6,78" AMOLED 144 Hz', chip: 'MediaTek Dimensity 7300', ram: 8, camera: '50 + 50 + 8 Mpx', selfie: '50 Mpx', battery: '5 200 mAh · 45 W', os: 'Android 15 · HiOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 132,
     description: 'Selfie 50 Mpx, écran 144 Hz et IP68/IP69 : le photophone star au Cameroun.'
   },
   {
@@ -199,7 +180,6 @@ export default [
     variants: [['128 Go', 98000], ['256 Go', 112000]],
     colors: [['Noir encre', '#1D1E22'], ['Bleu lagon', '#3D8BB5'], ['Titane', '#B8B3AA']],
     specs: { screen: '6,78" AMOLED 144 Hz', chip: 'MediaTek Helio G100', ram: 8, camera: '50 Mpx', selfie: '13 Mpx', battery: '5 200 mAh · 45 W', os: 'Android 15 · HiOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 185,
     description: 'Ultra-fin, écran AMOLED 144 Hz et charge rapide 45 W.'
   },
   {
@@ -208,7 +188,6 @@ export default [
     variants: [['128 Go', 72000], ['256 Go', 82000]],
     colors: [['Noir', '#1D1E22'], ['Bleu ciel', '#9CC4E4'], ['Blanc', '#F1F1EF']],
     specs: { screen: '6,67" LCD 120 Hz', chip: 'MediaTek Helio G81', ram: 4, camera: '50 Mpx', selfie: '8 Mpx', battery: '5 200 mAh', os: 'Android 15 · HiOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 141,
     description: 'Fluide, résistant (IP64) et économique.'
   },
   {
@@ -217,7 +196,6 @@ export default [
     variants: [['128 Go', 125000], ['256 Go', 142000]],
     colors: [['Noir geek', '#17181C'], ['Argent magique', '#C4C7CC'], ['Vert oasis', '#4C8C6F']],
     specs: { screen: '6,78" LCD 120 Hz', chip: 'MediaTek Dimensity 7300 Ultimate', ram: 8, camera: '50 Mpx', selfie: '8 Mpx', battery: '6 000 mAh · 45 W', os: 'Android 15 · HiOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.3, reviews: 77,
     description: 'Le gaming endurant : batterie 6 000 mAh, 5G et éclairage LED Delta.'
   },
 
@@ -228,7 +206,6 @@ export default [
     variants: [['256 Go', 155000, 172000]],
     colors: [['Gris titane', '#5B5E63'], ['Violet enchanté', '#8E7BBE'], ['Argent', '#D3D5D8']],
     specs: { screen: '6,78" AMOLED 144 Hz', chip: 'MediaTek Helio G100 Ultimate', ram: 8, camera: '50 + 8 + 2 Mpx', selfie: '32 Mpx', battery: '5 200 mAh · 90 W', os: 'Android 15 · XOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 164,
     description: 'Charge 90 W, recharge sans fil et finitions métal premium.'
   },
   {
@@ -237,7 +214,6 @@ export default [
     variants: [['256 Go', 135000]],
     colors: [['Noir', '#1E1F22'], ['Bleu Tahiti', '#3FA0C4'], ['Or titane', '#C9B48A']],
     specs: { screen: '6,78" AMOLED incurvé 144 Hz', chip: 'MediaTek Helio G200', ram: 8, camera: '50 Mpx', selfie: '13 Mpx', battery: '5 160 mAh · 45 W', os: 'Android 15 · XOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 92,
     description: 'Parmi les smartphones les plus fins du monde (5,95 mm) avec écran incurvé.'
   },
   {
@@ -246,7 +222,6 @@ export default [
     variants: [['128 Go', 82000], ['256 Go', 95000]],
     colors: [['Noir', '#1E1F22'], ['Bleu', '#4B7FC1'], ['Vert', '#79A88A']],
     specs: { screen: '6,78" LCD 120 Hz', chip: 'MediaTek Helio G88', ram: 8, camera: '50 Mpx', selfie: '8 Mpx', battery: '5 200 mAh', os: 'Android 15 · XOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 118,
     description: 'Grand écran, 8 Go de RAM et autonomie pour toute la journée.'
   },
   {
@@ -255,7 +230,6 @@ export default [
     variants: [['512 Go', 245000]],
     colors: [['Noir roche', '#1C1D20'], ['Vert violette', '#5C6B5A'], ['Or', '#C8B07E']],
     specs: { screen: '6,78" AMOLED incurvé 144 Hz', chip: 'MediaTek Dimensity 8200 Ultimate', ram: 12, camera: '108 + 50 + 2 Mpx', selfie: '50 Mpx', battery: '5 000 mAh · 45 W', os: 'Android 14 · XOS 14.5', network: '5G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 46,
     description: 'Le vlog en 4K 60 fps à l’avant comme à l’arrière.'
   },
 
@@ -266,7 +240,6 @@ export default [
     variants: [['256 Go', 98000]],
     colors: [['Noir', '#1D1E21'], ['Bleu', '#3E6FB0'], ['Titane', '#BDB7AC']],
     specs: { screen: '6,78" AMOLED incurvé 144 Hz', chip: 'Unisoc T620', ram: 8, camera: '50 Mpx', selfie: '32 Mpx', battery: '5 000 mAh', os: 'Android 14', network: '4G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 64,
     description: 'Design ultra-fin et écran AMOLED incurvé à prix itel.'
   },
   {
@@ -275,7 +248,6 @@ export default [
     variants: [['128 Go', 52000]],
     colors: [['Noir', '#1D1E21'], ['Vert', '#7FA58A'], ['Or', '#D2BD8E']],
     specs: { screen: '6,7" LCD 120 Hz', chip: 'Unisoc T603', ram: 4, camera: '50 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 14 Go', network: '4G', sim: 'Dual SIM' },
-    rating: 4.1, reviews: 209,
     description: 'Le smartphone essentiel : grand écran, 50 Mpx et bonne autonomie.'
   },
 
@@ -286,7 +258,6 @@ export default [
     variants: [['128 Go', 780000], ['256 Go', 850000]],
     colors: [['Obsidienne', '#1F2022'], ['Porcelaine', '#ECE7DF'], ['Vert sauge', '#A8B5A2'], ['Gris lune', '#9C9FA3']],
     specs: { screen: '6,3" Super Actua LTPO 120 Hz', chip: 'Google Tensor G5', ram: 16, camera: '50 + 48 + 48 Mpx', selfie: '42 Mpx', battery: '≈ 4 870 mAh', os: 'Android 16', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.7, reviews: 39,
     description: 'Photo computationnelle de référence, zoom 100x Pro Res et 7 ans de mises à jour.'
   },
   {
@@ -295,7 +266,6 @@ export default [
     variants: [['128 Go', 590000], ['256 Go', 650000]],
     colors: [['Obsidienne', '#1F2022'], ['Indigo', '#4D5A9C'], ['Givre', '#DDE5EC'], ['Citron', '#E7E3A0']],
     specs: { screen: '6,3" Actua OLED 120 Hz', chip: 'Google Tensor G5', ram: 12, camera: '48 + 13 + 10,8 Mpx', selfie: '10,5 Mpx', battery: '≈ 4 970 mAh', os: 'Android 16', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.6, reviews: 33,
     description: 'Le premier Pixel standard avec téléobjectif 5x et Gemini intégré.'
   },
   {
@@ -304,7 +274,6 @@ export default [
     variants: [['128 Go', 330000, 365000], ['256 Go', 380000]],
     colors: [['Obsidienne', '#1F2022'], ['Porcelaine', '#ECE7DF'], ['Iris', '#A8A3D8'], ['Pivoine', '#E5A3B5']],
     specs: { screen: '6,3" Actua pOLED 120 Hz', chip: 'Google Tensor G4', ram: 8, camera: '48 + 13 Mpx', selfie: '13 Mpx', battery: '5 100 mAh', os: 'Android 16', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.6, reviews: 71,
     description: 'L’expérience Pixel la plus accessible, avec 7 ans de mises à jour.'
   },
 
@@ -315,7 +284,6 @@ export default [
     variants: [['512 Go', 890000]],
     colors: [['Noir', '#1C1C1E'], ['Blanc', '#F1F0EC'], ['Or', '#CDB98F']],
     specs: { screen: '6,8" OLED LTPO 120 Hz', chip: 'Kirin 9020', ram: 12, camera: '50 + 40 + 48 Mpx', selfie: '13 Mpx', battery: '5 170 mAh · 100 W', os: 'HarmonyOS / EMUI', network: '5G', sim: 'Dual SIM' },
-    rating: 4.6, reviews: 24,
     description: 'Ouverture variable et téléobjectif double : la photographie mobile selon Huawei.'
   },
   {
@@ -324,7 +292,6 @@ export default [
     variants: [['256 Go', 285000]],
     colors: [['Noir', '#1C1C1E'], ['Blanc', '#F1F0EC'], ['Violet', '#9C86C2']],
     specs: { screen: '6,7" OLED 120 Hz', chip: 'Kirin 8000', ram: 12, camera: '50 + 8 Mpx', selfie: '60 Mpx', battery: '5 000 mAh · 100 W', os: 'EMUI 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 31,
     description: 'Selfie 60 Mpx et charge ultra-rapide 100 W dans un design élégant.'
   },
 
@@ -335,7 +302,6 @@ export default [
     variants: [['256 Go', 345000], ['512 Go', 385000]],
     colors: [['Vert forêt', '#2F5A47'], ['Blanc perle', '#F0EEEA'], ['Lilas', '#C7B7DE']],
     specs: { screen: '6,59" AMOLED 120 Hz', chip: 'MediaTek Dimensity 8350', ram: 12, camera: '50 + 50 + 8 Mpx', selfie: '50 Mpx', battery: '6 000 mAh · 80 W', os: 'Android 15 · ColorOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 52,
     description: 'Portraits IA, téléobjectif 3,5x et grosse batterie dans un châssis IP69.'
   },
   {
@@ -344,7 +310,6 @@ export default [
     variants: [['256 Go', 158000]],
     colors: [['Brun moka', '#5B4537'], ['Bleu', '#3F69A6']],
     specs: { screen: '6,67" LCD 120 Hz', chip: 'MediaTek Dimensity 6300', ram: 8, camera: '50 + 2 Mpx', selfie: '8 Mpx', battery: '5 800 mAh · 45 W', os: 'Android 15 · ColorOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.3, reviews: 40,
     description: 'Robustesse militaire, étanchéité IP69 et 5G accessible.'
   },
 
@@ -355,7 +320,6 @@ export default [
     variants: [['256 Go', 315000], ['512 Go', 355000]],
     colors: [['Bleu étoilé', '#3D4F7D'], ['Rose', '#E8C2CB'], ['Gris titane', '#7F8288']],
     specs: { screen: '6,77" AMOLED incurvé 120 Hz', chip: 'Snapdragon 7 Gen 3', ram: 12, camera: '50 + 50 Mpx Zeiss', selfie: '50 Mpx', battery: '6 000 mAh · 90 W', os: 'Android 15 · Funtouch OS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 36,
     description: 'Optiques Zeiss, portrait Aura Light et 6 000 mAh dans un corps fin.'
   },
   {
@@ -364,7 +328,6 @@ export default [
     variants: [['128 Go', 98000], ['256 Go', 112000]],
     colors: [['Noir', '#1F2023'], ['Vert', '#6E9F86'], ['Blanc', '#EEF0F1']],
     specs: { screen: '6,68" LCD 120 Hz', chip: 'MediaTek Helio G85', ram: 6, camera: '50 Mpx', selfie: '8 Mpx', battery: '6 500 mAh · 44 W', os: 'Android 14 · Funtouch OS 14', network: '4G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 58,
     description: 'Batterie géante de 6 500 mAh et certification de résistance militaire.'
   },
 
@@ -375,7 +338,6 @@ export default [
     variants: [['256 Go', 285000], ['512 Go', 325000]],
     colors: [['Blanc perle', '#F3F1EC'], ['Gris titane', '#6E7177']],
     specs: { screen: '6,83" OLED quad-incurvé 120 Hz', chip: 'Snapdragon 7s Gen 3', ram: 12, camera: '50 + 50 + 8 Mpx', selfie: '32 Mpx', battery: '6 000 mAh · 80 W', os: 'Android 15 · realme UI 6', network: '5G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 29,
     description: 'Dos qui change de couleur au froid, périscope 3x et grosse batterie.'
   },
   {
@@ -384,7 +346,6 @@ export default [
     variants: [['256 Go', 105000, 118000]],
     colors: [['Or éclair', '#D8BF7A'], ['Noir tempête', '#202226']],
     specs: { screen: '6,72" LCD 90 Hz', chip: 'MediaTek Helio G92 Max', ram: 8, camera: '50 Mpx', selfie: '8 Mpx', battery: '6 000 mAh · 45 W', os: 'Android 14 · realme UI 5', network: '4G', sim: 'Dual SIM' },
-    rating: 4.3, reviews: 73,
     description: 'Étanche IP69, résistant aux chocs et autonomie XXL.'
   },
 
@@ -395,7 +356,6 @@ export default [
     variants: [['256 Go', 610000], ['512 Go', 690000]],
     colors: [['Noir éclipse', '#1A1B1F'], ['Bleu minuit', '#26324D'], ['Blanc arctique', '#EEF0F2']],
     specs: { screen: '6,82" AMOLED LTPO 120 Hz', chip: 'Snapdragon 8 Elite', ram: 12, camera: '50 + 50 + 50 Mpx Hasselblad', selfie: '32 Mpx', battery: '6 000 mAh · 100 W', os: 'Android 15 · OxygenOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.7, reviews: 44,
     description: 'Hasselblad, Snapdragon 8 Elite et charge 100 W : le flagship sans compromis.'
   },
 
@@ -406,7 +366,6 @@ export default [
     variants: [['256 Go', 330000], ['512 Go', 370000]],
     colors: [['Noir', '#1D1E21'], ['Or désert', '#D4C19C'], ['Gris lune', '#B4B7BC']],
     specs: { screen: '6,55" AMOLED 120 Hz', chip: 'Snapdragon 7 Gen 4', ram: 12, camera: '200 + 12 Mpx', selfie: '50 Mpx', battery: '5 300 mAh · 66 W', os: 'Android 15 · MagicOS 9', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 27,
     description: 'Capteur 200 Mpx stabilisé et écran 5 000 nits lisible en plein soleil.'
   },
   {
@@ -415,7 +374,6 @@ export default [
     variants: [['256 Go', 215000]],
     colors: [['Noir titane', '#2A2B2F'], ['Violet', '#A390C9'], ['Cyan', '#6EBFC9']],
     specs: { screen: '6,78" AMOLED incurvé 120 Hz', chip: 'Snapdragon 6 Gen 1', ram: 12, camera: '108 + 5 Mpx', selfie: '16 Mpx', battery: '6 600 mAh · 66 W', os: 'Android 15 · MagicOS 9', network: '5G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 34,
     description: 'Ultra-résistant aux chutes, batterie 6 600 mAh et 5G.'
   },
 
@@ -426,7 +384,6 @@ export default [
     variants: [['256 Go', 265000]],
     colors: [['Pantone Gibraltar', '#2E5D6B'], ['Pantone Shamrock', '#3D7A55']],
     specs: { screen: '6,67" pOLED quad-incurvé 120 Hz', chip: 'MediaTek Dimensity 7400', ram: 12, camera: '50 + 50 + 10 Mpx', selfie: '50 Mpx', battery: '5 200 mAh · 68 W', os: 'Android 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 22,
     description: 'Finition cuir végan Pantone, écran incurvé et Android pur.'
   },
   {
@@ -435,7 +392,6 @@ export default [
     variants: [['256 Go', 165000]],
     colors: [['Bleu cobalt', '#2C4E8C'], ['Vert olive', '#6F7A4F'], ['Gris', '#5E6166']],
     specs: { screen: '6,67" pOLED incurvé 120 Hz', chip: 'Snapdragon 6s Gen 3', ram: 12, camera: '50 + 8 Mpx', selfie: '32 Mpx', battery: '5 000 mAh · 30 W', os: 'Android 14', network: '5G', sim: 'Dual SIM' },
-    rating: 4.3, reviews: 48,
     description: 'Écran pOLED incurvé et son Dolby Atmos à prix maîtrisé.'
   },
 
@@ -446,7 +402,6 @@ export default [
     variants: [['128 Go', 115000, 130000]],
     colors: [['Violet', '#9C88C4'], ['Gris', '#6E7177']],
     specs: { screen: '6,56" LCD 90 Hz', chip: 'Snapdragon 480+', ram: 6, camera: '50 + 2 + 2 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 14', network: '5G', sim: 'Dual SIM' },
-    rating: 4.1, reviews: 36,
     description: 'Réparable soi-même (écran, batterie) et robuste, la promesse Nokia.'
   },
 
@@ -457,7 +412,6 @@ export default [
     variants: [['256 Go', 245000]],
     colors: [['Noir', '#1A1A1A'], ['Blanc', '#EDEDED'], ['Bleu', '#5C7FB5']],
     specs: { screen: '6,77" AMOLED 120 Hz', chip: 'Snapdragon 7s Gen 3', ram: 12, camera: '50 + 50 + 8 Mpx', selfie: '32 Mpx', battery: '5 000 mAh · 50 W', os: 'Android 15 · Nothing OS 3', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 30,
     description: 'Dos transparent, interface Glyph et téléobjectif 2x : le plus original du marché.'
   },
 
@@ -468,7 +422,6 @@ export default [
     variants: [['256 Go', 890000]],
     colors: [['Noir ardoise', '#26282B'], ['Vert mousse', '#4E5E4B'], ['Violet orchidée', '#8F7BA6']],
     specs: { screen: '6,5" OLED 120 Hz 19,5:9', chip: 'Snapdragon 8 Elite', ram: 12, camera: '48 + 48 + 12 Mpx Zeiss', selfie: '12 Mpx', battery: '5 000 mAh', os: 'Android 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 15,
     description: 'Prise jack, lecteur microSD et zoom optique continu : pour les créateurs exigeants.'
   },
   // ═════════════ ARRIVAGES SUPPLÉMENTAIRES ═════════════
@@ -479,7 +432,6 @@ export default [
     variants: [['256 Go', 840000, 920000], ['512 Go', 990000]],
     colors: [['Titane désert', '#BFA48F'], ['Titane naturel', '#C2BCB2'], ['Titane noir', '#3C3C3D'], ['Titane blanc', '#F2F1ED']],
     specs: { screen: '6,9" Super Retina XDR OLED 120 Hz', chip: 'Apple A18 Pro', ram: 8, camera: '48 + 48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 4 685 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.8, reviews: 256,
     description: 'Le grand écran 6,9" en titane, zoom optique 5x et vidéo 4K 120 fps.'
   },
   {
@@ -488,7 +440,6 @@ export default [
     variants: [['128 Go', 690000], ['256 Go', 760000]],
     colors: [['Titane désert', '#BFA48F'], ['Titane naturel', '#C2BCB2'], ['Titane noir', '#3C3C3D']],
     specs: { screen: '6,3" Super Retina XDR OLED 120 Hz', chip: 'Apple A18 Pro', ram: 8, camera: '48 + 48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 580 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.8, reviews: 174,
     description: 'Titane léger, puce A18 Pro et téléobjectif 5x dans un format compact.'
   },
   {
@@ -497,7 +448,6 @@ export default [
     variants: [['128 Go', 600000], ['256 Go', 680000]],
     colors: [['Outremer', '#7A8FD6'], ['Sarcelle', '#88B5B1'], ['Noir', '#232325']],
     specs: { screen: '6,7" Super Retina XDR OLED', chip: 'Apple A18', ram: 8, camera: '48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 4 670 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.7, reviews: 88,
     description: 'Le grand écran d’Apple avec une autonomie exceptionnelle.'
   },
   {
@@ -506,7 +456,6 @@ export default [
     variants: [['128 Go', 430000], ['256 Go', 500000]],
     colors: [['Noir', '#232325'], ['Blanc', '#F4F4F2']],
     specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A18', ram: 8, camera: '48 Mpx Fusion', selfie: '12 Mpx', battery: '≈ 4 000 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.6, reviews: 143,
     description: 'L’iPhone récent le plus abordable : puce A18, Apple Intelligence et grosse autonomie.'
   },
   {
@@ -515,7 +464,6 @@ export default [
     variants: [['128 Go', 300000], ['256 Go', 345000]],
     colors: [['Minuit', '#232A31'], ['Bleu', '#A3B6CB'], ['Violet', '#D7CCE2'], ['Lumière stellaire', '#F1EDE4']],
     specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A15 Bionic', ram: 6, camera: '12 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 280 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.6, reviews: 265,
     description: 'Reconditionné grade A, batterie testée > 85 %, garanti 6 mois.'
   },
   {
@@ -524,7 +472,6 @@ export default [
     variants: [['64 Go', 175000, 195000], ['128 Go', 205000]],
     colors: [['Noir', '#25272A'], ['Blanc', '#F3F2EF'], ['Bleu', '#2C4A6E'], ['Vert', '#D5E3D2']],
     specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A14 Bionic', ram: 4, camera: '12 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 2 815 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.4, reviews: 318,
     description: 'Écran OLED, 5G et design plat : un iPhone fiable à petit prix.'
   },
   {
@@ -533,7 +480,6 @@ export default [
     variants: [['64 Go', 135000], ['128 Go', 155000]],
     colors: [['Noir', '#25272A'], ['Blanc', '#F3F2EF'], ['Violet', '#D1C7E0'], ['Rouge', '#BF1E2E']],
     specs: { screen: '6,1" Liquid Retina LCD', chip: 'Apple A13 Bionic', ram: 4, camera: '12 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 110 mAh', os: 'iOS 26', network: '4G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.3, reviews: 402,
     description: 'Le premier iPhone idéal : reconditionné, testé et garanti.'
   },
 
@@ -544,7 +490,6 @@ export default [
     variants: [['256 Go', 780000], ['512 Go', 870000]],
     colors: [['Titane argent', '#C9CCCE'], ['Titane noir', '#2E3033'], ['Titane bleu glacé', '#B8C9D9']],
     specs: { screen: '6,7" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Elite for Galaxy', ram: 12, camera: '200 + 12 Mpx', selfie: '12 Mpx', battery: '3 900 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.6, reviews: 34,
     description: 'Le Galaxy le plus fin : 5,8 mm, 163 g et capteur 200 Mpx.'
   },
   {
@@ -553,7 +498,6 @@ export default [
     variants: [['256 Go', 690000], ['512 Go', 780000]],
     colors: [['Marine', '#2A3550'], ['Bleu glacier', '#B9CCE0'], ['Argent', '#D9DADC']],
     specs: { screen: '6,7" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Elite for Galaxy', ram: 12, camera: '50 + 12 + 10 Mpx', selfie: '12 Mpx', battery: '4 900 mAh · 45 W', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.7, reviews: 61,
     description: 'Grand écran QHD+, charge 45 W et Galaxy AI.'
   },
   {
@@ -562,7 +506,6 @@ export default [
     variants: [['128 Go', 365000, 399000], ['256 Go', 405000]],
     colors: [['Bleu', '#7C9CC4'], ['Graphite', '#3A3B3E'], ['Menthe', '#C8E1D3'], ['Jaune', '#F0E2A0']],
     specs: { screen: '6,7" Dynamic AMOLED 2X 120 Hz', chip: 'Exynos 2400e', ram: 8, camera: '50 + 12 + 8 Mpx', selfie: '10 Mpx', battery: '4 700 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.5, reviews: 97,
     description: 'L’expérience Galaxy S à prix accessible, avec 7 ans de mises à jour.'
   },
   {
@@ -571,7 +514,6 @@ export default [
     variants: [['256 Go', 455000], ['512 Go', 520000]],
     colors: [['Noir fantôme', '#2B2C2F'], ['Crème', '#EDE6D6'], ['Vert', '#B9C6B0'], ['Lavande', '#D3C7E3']],
     specs: { screen: '6,8" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Gen 2 for Galaxy', ram: 12, camera: '200 + 12 + 10 + 10 Mpx', selfie: '12 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.7, reviews: 188,
     description: 'Le photophone star avec S Pen, reconditionné grade A.'
   },
   {
@@ -580,7 +522,6 @@ export default [
     variants: [['128 Go', 165000], ['256 Go', 185000]],
     colors: [['Noir', '#2B2C2F'], ['Blanc', '#EDEDEF'], ['Rose', '#E8C9CF'], ['Menthe', '#C8E1D3']],
     specs: { screen: '6,7" Super AMOLED 120 Hz', chip: 'Exynos 1380', ram: 8, camera: '50 + 8 + 2 Mpx', selfie: '13 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 76,
     description: '5G, écran AMOLED et étanchéité IP67 pour un budget maîtrisé.'
   },
   {
@@ -589,7 +530,6 @@ export default [
     variants: [['64 Go', 68000], ['128 Go', 78000]],
     colors: [['Noir', '#2B2C2F'], ['Bleu clair', '#B8CDE3'], ['Or', '#E3D3AE']],
     specs: { screen: '6,7" PLS LCD', chip: 'MediaTek Helio G85', ram: 4, camera: '50 + 2 Mpx', selfie: '8 Mpx', battery: '5 000 mAh · 25 W', os: 'Android 15 · One UI 7', network: '4G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 154,
     description: 'Le Samsung le plus accessible, avec grand écran et bonne autonomie.'
   },
 
@@ -600,7 +540,6 @@ export default [
     variants: [['256 Go', 520000], ['512 Go', 580000]],
     colors: [['Noir', '#1E1F21'], ['Gris', '#8E9196'], ['Or moka', '#BFA88A']],
     specs: { screen: '6,83" AMOLED 144 Hz', chip: 'MediaTek Dimensity 9400+', ram: 12, camera: '50 + 50 + 12 Mpx Leica', selfie: '32 Mpx', battery: '5 500 mAh · 90 W', os: 'Android 15 · HyperOS 3', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.6, reviews: 21,
     description: 'Optiques Leica avec téléobjectif 5x et charge 90 W.'
   },
   {
@@ -609,7 +548,6 @@ export default [
     variants: [['256 Go', 195000], ['512 Go', 225000]],
     colors: [['Noir minuit', '#1F2024'], ['Violet lavande', '#B9A6D9'], ['Vert océan', '#4F8C82']],
     specs: { screen: '6,67" AMOLED incurvé 120 Hz', chip: 'MediaTek Dimensity 7300-Ultra', ram: 8, camera: '200 + 8 + 2 Mpx', selfie: '20 Mpx', battery: '5 110 mAh · 45 W', os: 'Android 14 · HyperOS', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 129,
     description: '200 Mpx, écran incurvé et IP68 en version 5G.'
   },
   {
@@ -618,7 +556,6 @@ export default [
     variants: [['256 Go', 215000], ['512 Go', 245000]],
     colors: [['Jaune POCO', '#F2C200'], ['Noir', '#1E1F21'], ['Vert', '#4D6B55']],
     specs: { screen: '6,67" AMOLED 120 Hz', chip: 'MediaTek Dimensity 8400-Ultra', ram: 12, camera: '50 + 8 Mpx', selfie: '20 Mpx', battery: '6 000 mAh · 90 W', os: 'Android 15 · HyperOS 2', network: '5G', sim: 'Dual SIM' },
-    rating: 4.6, reviews: 112,
     description: 'Le roi du gaming à prix serré : puce surpuissante et 6 000 mAh.'
   },
   {
@@ -627,7 +564,6 @@ export default [
     variants: [['64 Go', 55000], ['128 Go', 62000]],
     colors: [['Noir', '#202124'], ['Bleu lac', '#6E95B8'], ['Sable', '#D9C9A8']],
     specs: { screen: '6,88" LCD 120 Hz', chip: 'Unisoc T7250', ram: 4, camera: '32 Mpx', selfie: '8 Mpx', battery: '5 200 mAh', os: 'Android 15 (Go)', network: '4G', sim: 'Dual SIM' },
-    rating: 4.1, reviews: 87,
     description: 'Grand écran et batterie solide à tout petit prix.'
   },
 
@@ -638,7 +574,6 @@ export default [
     variants: [['256 Go', 145000]],
     colors: [['Noir galaxie', '#1E2026'], ['Vert émeraude', '#2F6B57'], ['Blanc glacier', '#EEF1F3']],
     specs: { screen: '6,78" AMOLED 120 Hz', chip: 'MediaTek Helio G100 Ultimate', ram: 8, camera: '50 + 2 Mpx', selfie: '32 Mpx', battery: '5 200 mAh · 45 W', os: 'Android 15 · HiOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 98,
     description: 'Le style Camon et ses portraits IA à prix accessible.'
   },
   {
@@ -647,7 +582,6 @@ export default [
     variants: [['512 Go', 690000]],
     colors: [['Noir karst', '#1C1D20'], ['Vert rippling', '#3E5F55']],
     specs: { screen: '7,85" pliable + 6,42" externe, 120 Hz', chip: 'MediaTek Dimensity 9000+', ram: 12, camera: '50 + 50 + 50 Mpx', selfie: '32 + 32 Mpx', battery: '5 750 mAh · 70 W', os: 'Android 14 · HiOS', network: '5G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 14,
     description: 'Le pliable grand format le plus accessible, avec une énorme batterie.'
   },
   {
@@ -656,7 +590,6 @@ export default [
     variants: [['64 Go', 52000], ['128 Go', 60000]],
     colors: [['Noir encre', '#1D1E22'], ['Vert', '#6EA58A'], ['Blanc', '#F1F1EF']],
     specs: { screen: '6,67" LCD 120 Hz', chip: 'Unisoc T7250', ram: 4, camera: '13 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 15 (Go)', network: '4G', sim: 'Dual SIM' },
-    rating: 4.1, reviews: 176,
     description: 'Le premier smartphone idéal : fluide, résistant (IP64) et économique.'
   },
 
@@ -667,7 +600,6 @@ export default [
     variants: [['256 Go', 185000], ['512 Go', 210000]],
     colors: [['Noir cyber', '#16171B'], ['Argent blade', '#C9CCD1']],
     specs: { screen: '6,78" AMOLED 144 Hz', chip: 'MediaTek Dimensity 8350 Ultimate', ram: 12, camera: '108 + 2 Mpx', selfie: '13 Mpx', battery: '5 500 mAh · 45 W', os: 'Android 15 · XOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 58,
     description: 'Gâchettes gaming intégrées, LED Mecha et 144 Hz pour les joueurs.'
   },
   {
@@ -676,7 +608,6 @@ export default [
     variants: [['256 Go', 128000]],
     colors: [['Noir', '#1E1F22'], ['Vert', '#5E8C74'], ['Violet', '#8E7BBE']],
     specs: { screen: '6,78" AMOLED 144 Hz', chip: 'MediaTek Helio G100 Ultimate', ram: 8, camera: '50 + 2 Mpx', selfie: '13 Mpx', battery: '5 200 mAh · 45 W', os: 'Android 15 · XOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.3, reviews: 84,
     description: 'Écran AMOLED 144 Hz et design métal à prix doux.'
   },
   {
@@ -685,7 +616,6 @@ export default [
     variants: [['64 Go', 50000], ['128 Go', 58000]],
     colors: [['Noir', '#1E1F22'], ['Bleu', '#4B7FC1'], ['Argent', '#C9CCD1']],
     specs: { screen: '6,67" LCD 120 Hz', chip: 'Unisoc T7250', ram: 4, camera: '8 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 15 (Go)', network: '4G', sim: 'Dual SIM' },
-    rating: 4.0, reviews: 102,
     description: 'Simple, solide et abordable, idéal comme premier smartphone.'
   },
 
@@ -696,7 +626,6 @@ export default [
     variants: [['64 Go', 45000], ['128 Go', 52000]],
     colors: [['Noir', '#1D1E21'], ['Bleu', '#3E6FB0'], ['Or', '#D2BD8E']],
     specs: { screen: '6,6" LCD 90 Hz', chip: 'Unisoc T7100', ram: 4, camera: '13 Mpx', selfie: '5 Mpx', battery: '5 000 mAh', os: 'Android 14 (Go)', network: '4G', sim: 'Dual SIM' },
-    rating: 4.0, reviews: 141,
     description: 'Résistant (IP54), grand écran et prix mini.'
   },
   {
@@ -705,7 +634,6 @@ export default [
     variants: [['128 Go', 68000], ['256 Go', 78000]],
     colors: [['Noir', '#1D1E21'], ['Vert', '#7FA58A']],
     specs: { screen: '6,67" LCD 120 Hz', chip: 'Unisoc T606', ram: 4, camera: '50 Mpx', selfie: '8 Mpx', battery: '6 000 mAh', os: 'Android 14', network: '4G', sim: 'Dual SIM' },
-    rating: 4.1, reviews: 66,
     description: 'Batterie de 6 000 mAh pour tenir deux jours.'
   },
 
@@ -716,7 +644,6 @@ export default [
     variants: [['128 Go', 470000], ['256 Go', 520000]],
     colors: [['Obsidienne', '#1F2022'], ['Porcelaine', '#ECE7DF'], ['Quartz rose', '#E8C9C6']],
     specs: { screen: '6,3" Super Actua LTPO 120 Hz', chip: 'Google Tensor G4', ram: 16, camera: '50 + 48 + 48 Mpx', selfie: '42 Mpx', battery: '4 700 mAh', os: 'Android 16', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.6, reviews: 47,
     description: 'Reconditionné grade A : photo Pixel de référence et 16 Go de RAM.'
   },
   {
@@ -725,7 +652,6 @@ export default [
     variants: [['128 Go', 255000, 285000]],
     colors: [['Obsidienne', '#1F2022'], ['Menthe', '#C9E3D3'], ['Rose', '#EDC9C3']],
     specs: { screen: '6,2" Actua OLED 120 Hz', chip: 'Google Tensor G3', ram: 8, camera: '50 + 12 Mpx', selfie: '10,5 Mpx', battery: '4 575 mAh', os: 'Android 16', network: '5G', sim: 'Nano-SIM + eSIM' },
-    rating: 4.4, reviews: 59,
     description: 'Compact, mises à jour jusqu’en 2030 et photo nocturne bluffante.'
   },
 
@@ -736,7 +662,6 @@ export default [
     variants: [['512 Go', 395000]],
     colors: [['Noir', '#1C1C1E'], ['Violet', '#9C86C2'], ['Vert', '#8DAE9A']],
     specs: { screen: '6,76" OLED quad-incurvé 120 Hz', chip: 'Kirin 8000', ram: 12, camera: '50 + 12 + 8 Mpx', selfie: '60 + 8 Mpx', battery: '5 000 mAh · 100 W', os: 'EMUI 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.4, reviews: 19,
     description: 'Double caméra selfie 60 Mpx et téléobjectif portrait.'
   },
 
@@ -747,7 +672,6 @@ export default [
     variants: [['512 Go', 790000]],
     colors: [['Noir spatial', '#1E1F23'], ['Blanc perle', '#F0EEEA']],
     specs: { screen: '6,78" AMOLED LTPO 120 Hz', chip: 'MediaTek Dimensity 9400', ram: 16, camera: '50 + 50 + 50 + 50 Mpx Hasselblad', selfie: '32 Mpx', battery: '5 910 mAh · 80 W', os: 'Android 15 · ColorOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.7, reviews: 23,
     description: 'Quatre capteurs 50 Mpx Hasselblad dont deux périscopes.'
   },
   {
@@ -756,7 +680,6 @@ export default [
     variants: [['256 Go', 205000]],
     colors: [['Violet lumineux', '#A893C9'], ['Gris graphite', '#4A4C52']],
     specs: { screen: '6,67" AMOLED 120 Hz', chip: 'MediaTek Helio G100', ram: 8, camera: '50 + 8 + 2 Mpx', selfie: '32 Mpx', battery: '5 800 mAh · 45 W', os: 'Android 15 · ColorOS 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.3, reviews: 44,
     description: 'Étanche IP69, portraits IA et grosse batterie.'
   },
 
@@ -767,7 +690,6 @@ export default [
     variants: [['512 Go', 780000]],
     colors: [['Noir cosmos', '#1D1E22'], ['Titane', '#B7B2A9']],
     specs: { screen: '6,78" AMOLED LTPO 120 Hz', chip: 'MediaTek Dimensity 9400', ram: 16, camera: '50 + 50 + 200 Mpx Zeiss', selfie: '32 Mpx', battery: '6 000 mAh · 90 W', os: 'Android 15 · Funtouch OS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.7, reviews: 18,
     description: 'Téléobjectif 200 Mpx Zeiss : un monstre de la photo.'
   },
   {
@@ -776,7 +698,6 @@ export default [
     variants: [['128 Go', 82000]],
     colors: [['Noir brillant', '#1F2023'], ['Argent', '#C9CCD1']],
     specs: { screen: '6,68" LCD 90 Hz', chip: 'Unisoc T612', ram: 4, camera: '50 Mpx', selfie: '5 Mpx', battery: '5 500 mAh', os: 'Android 14 · Funtouch OS 14', network: '4G', sim: 'Dual SIM' },
-    rating: 4.1, reviews: 52,
     description: 'Robuste (IP64), grande batterie et son puissant.'
   },
 
@@ -787,7 +708,6 @@ export default [
     variants: [['512 Go', 520000]],
     colors: [['Titane lunaire', '#B8B4AC'], ['Orange Mars', '#D9662B']],
     specs: { screen: '6,78" AMOLED 120 Hz', chip: 'Snapdragon 8 Elite', ram: 12, camera: '50 + 50 + 8 Mpx', selfie: '16 Mpx', battery: '5 800 mAh · 120 W', os: 'Android 15 · realme UI 6', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 16,
     description: 'Snapdragon 8 Elite et charge 120 W à prix agressif.'
   },
   {
@@ -796,7 +716,6 @@ export default [
     variants: [['128 Go', 62000]],
     colors: [['Noir marbre', '#202226'], ['Bleu voyage', '#4E7DB5']],
     specs: { screen: '6,74" LCD 90 Hz', chip: 'Unisoc T612', ram: 4, camera: '32 Mpx', selfie: '5 Mpx', battery: '5 000 mAh', os: 'Android 14 · realme UI', network: '4G', sim: 'Dual SIM' },
-    rating: 4.0, reviews: 47,
     description: 'Châssis métal, IP64 et petit prix.'
   },
 
@@ -807,7 +726,6 @@ export default [
     variants: [['256 Go', 315000], ['512 Go', 355000]],
     colors: [['Noir fantôme', '#1E1F22'], ['Gris sec', '#9EA0A3'], ['Bleu marbre', '#8EA7C9']],
     specs: { screen: '6,83" AMOLED 144 Hz', chip: 'Snapdragon 8s Gen 3', ram: 12, camera: '50 + 8 Mpx', selfie: '50 Mpx', battery: '6 800 mAh · 80 W', os: 'Android 15 · OxygenOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 26,
     description: 'Batterie géante de 6 800 mAh et performances de flagship.'
   },
   {
@@ -816,7 +734,6 @@ export default [
     variants: [['256 Go', 410000]],
     colors: [['Nebula Noir', '#1D1E22'], ['Astral Trail', '#C9C6BF']],
     specs: { screen: '6,78" AMOLED LTPO 120 Hz', chip: 'Snapdragon 8 Gen 3', ram: 12, camera: '50 + 50 + 8 Mpx', selfie: '16 Mpx', battery: '6 000 mAh · 80 W', os: 'Android 15 · OxygenOS 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 22,
     description: 'Le flagship killer : puissance haut de gamme à prix contenu.'
   },
 
@@ -827,7 +744,6 @@ export default [
     variants: [['512 Go', 760000]],
     colors: [['Noir', '#1D1E21'], ['Gris lunaire', '#B4B7BC'], ['Bleu', '#3B5B8A']],
     specs: { screen: '6,8" OLED LTPO 120 Hz', chip: 'Snapdragon 8 Elite', ram: 12, camera: '50 + 50 + 200 Mpx', selfie: '50 Mpx', battery: '5 270 mAh · 100 W', os: 'Android 15 · MagicOS 9', network: '5G', sim: 'Dual SIM' },
-    rating: 4.6, reviews: 17,
     description: 'Périscope 200 Mpx, écran ultra-lumineux et IA photo.'
   },
   {
@@ -836,7 +752,6 @@ export default [
     variants: [['128 Go', 98000], ['256 Go', 112000]],
     colors: [['Noir minuit', '#1D1E21'], ['Vert forêt', '#3E6B55'], ['Blanc', '#EDEDEF']],
     specs: { screen: '6,77" LCD 120 Hz', chip: 'Snapdragon 685', ram: 8, camera: '108 + 2 Mpx', selfie: '8 Mpx', battery: '6 000 mAh · 35 W', os: 'Android 14 · MagicOS 8', network: '4G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 49,
     description: 'Résistant aux chutes, 108 Mpx et batterie 6 000 mAh.'
   },
 
@@ -847,7 +762,6 @@ export default [
     variants: [['512 Go', 690000]],
     colors: [['Pantone Rio Red', '#A3262A'], ['Pantone Mountain Trail', '#4A5A3E'], ['Pantone Scarab', '#2C4A4C']],
     specs: { screen: '7" pliable + 4" externe, 165 Hz', chip: 'Snapdragon 8 Elite', ram: 16, camera: '50 + 50 Mpx', selfie: '50 Mpx', battery: '4 700 mAh · 68 W', os: 'Android 15', network: '5G', sim: 'Dual SIM + eSIM' },
-    rating: 4.6, reviews: 15,
     description: 'Le clapet le plus puissant du marché, finitions bois ou cuir.'
   },
   {
@@ -856,7 +770,6 @@ export default [
     variants: [['128 Go', 72000]],
     colors: [['Pantone Forest Green', '#2F5A45'], ['Pantone Plum Red', '#7E2E46']],
     specs: { screen: '6,67" LCD 90 Hz', chip: 'MediaTek Helio G81 Extreme', ram: 4, camera: '50 Mpx', selfie: '8 Mpx', battery: '5 200 mAh', os: 'Android 15', network: '4G', sim: 'Dual SIM' },
-    rating: 4.1, reviews: 38,
     description: 'Android 15 pur, son Dolby Atmos et finition cuir végan.'
   },
 
@@ -867,7 +780,6 @@ export default [
     variants: [['64 Go', 62000], ['128 Go', 70000]],
     colors: [['Charbon', '#2E3033'], ['Vert automne', '#7A8A6A'], ['Rose plage', '#E5C3BF']],
     specs: { screen: '6,5" LCD', chip: 'Unisoc SC9863A1', ram: 4, camera: '50 + 2 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 13', network: '4G', sim: 'Dual SIM' },
-    rating: 4.0, reviews: 29,
     description: 'Dos en verre trempé, IP52 et autonomie de 3 jours.'
   },
 
@@ -878,7 +790,6 @@ export default [
     variants: [['256 Go', 560000], ['512 Go', 620000]],
     colors: [['Noir', '#1A1A1A'], ['Blanc', '#EDEDED']],
     specs: { screen: '6,67" AMOLED 120 Hz', chip: 'Snapdragon 8s Gen 4', ram: 12, camera: '50 + 50 + 50 Mpx', selfie: '50 Mpx', battery: '5 150 mAh · 65 W', os: 'Android 15 · Nothing OS 3.5', network: '5G', sim: 'Dual SIM' },
-    rating: 4.5, reviews: 12,
     description: 'Le premier flagship Nothing avec la Glyph Matrix au dos.'
   },
 
@@ -889,7 +800,6 @@ export default [
     variants: [['128 Go', 285000]],
     colors: [['Noir', '#26282B'], ['Blanc', '#EDEDEF'], ['Bleu', '#6F8FB5']],
     specs: { screen: '6,1" OLED 21:9', chip: 'Snapdragon 6 Gen 1', ram: 8, camera: '48 + 8 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 15', network: '5G', sim: 'Dual SIM' },
-    rating: 4.2, reviews: 11,
     description: 'Léger, prise jack et autonomie record de 2 jours.'
   }
 

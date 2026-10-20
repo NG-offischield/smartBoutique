@@ -40,8 +40,6 @@ export class Product {
     this.mockup = raw.mockup || 'square'
     this.image = raw.image || null
     this.description = raw.description || ''
-    this.rating = Number(raw.rating) || 0
-    this.reviews = Number(raw.reviews) || 0
     this.specs = { ...raw.specs }
 
     this.variants = raw.variants.map(([storage, price, oldPrice]) => ({

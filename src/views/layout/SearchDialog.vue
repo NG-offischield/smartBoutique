@@ -122,11 +122,11 @@ function onBackdrop(e) {
 
 <style scoped>
 .search { width: min(680px, calc(100vw - 24px)); max-height: min(720px, calc(100vh - 48px)); margin: 8vh auto auto; padding: 0; border: none; border-radius: var(--radius-lg); background: var(--surface); color: var(--text); box-shadow: 0 40px 80px -20px rgb(0 0 0 / 0.5); }
-.search::backdrop { background: rgb(10 15 31 / 0.55); backdrop-filter: blur(4px); }
+.search::backdrop { background: rgb(8 20 15 / 0.55); backdrop-filter: blur(4px); }
 .search[open] { animation: pop 0.25s var(--ease); }
 @keyframes pop { from { opacity: 0; transform: translateY(-10px) scale(0.98); } }
 .search__panel { padding: 16px; display: grid; gap: 14px; }
-.search__bar { display: flex; align-items: center; gap: 10px; padding: 0 6px 0 14px; border: 2px solid var(--brand-400); border-radius: 14px; }
+.search__bar { display: flex; align-items: center; gap: 10px; padding: 0 6px 0 14px; border: 2px solid var(--brand-400); border-radius: var(--radius); }
 .search__bar > svg { width: 20px; height: 20px; color: var(--text-soft); flex-shrink: 0; }
 .search__bar input { flex: 1; min-width: 0; height: 54px; border: none; background: none; font-size: 1.05rem; outline: none; }
 .search__bar .icon-btn { border: none; width: 40px; height: 40px; }

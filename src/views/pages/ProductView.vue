@@ -3,7 +3,6 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { Heart, ArrowLeftRight, Share2, Phone, Truck, ShieldCheck, Banknote, RefreshCw, Check, Cpu, Smartphone, Camera, Battery, MemoryStick, Wifi } from 'lucide-vue-next'
 import ProductVisual from '@/views/components/ProductVisual.vue'
 import ProductCard from '@/views/components/ProductCard.vue'
-import StarRating from '@/views/components/StarRating.vue'
 import WhatsAppIcon from '@/views/components/WhatsAppIcon.vue'
 import { BADGES } from '@/models/Product'
 import { formatPrice } from '@/models/format'
@@ -77,7 +76,6 @@ watch(
       name: p.fullName,
       brand: { '@type': 'Brand', name: p.brand.name },
       description: p.description,
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: p.rating, reviewCount: p.reviews },
       offers: {
         '@type': 'AggregateOffer',
         priceCurrency: 'XAF',
@@ -160,7 +158,6 @@ function onRadioKey(e, list, current, set) {
           <RouterLink :to="{ path: '/telephones', query: { marques: product.brand.id } }" class="info__brand">{{ product.brand.name }}</RouterLink>
           <h1 class="info__title">{{ product.fullName }}</h1>
           <div class="info__meta">
-            <StarRating :value="product.rating" :reviews="product.reviews" />
             <span class="badge" :class="product.condition === 'neuf' ? 'badge--success' : 'badge--neutral'">{{ product.conditionLabel }}</span>
             <span class="badge" :class="`badge--${product.stockInfo.tone}`">{{ product.stockInfo.label }}</span>
           </div>
@@ -286,31 +283,29 @@ function onRadioKey(e, list, current, set) {
 <style scoped>
 .product { padding: 24px 0 80px; }
 .crumbs { display: flex; gap: 8px; font-size: 0.85rem; color: var(--text-muted); flex-wrap: wrap; margin-bottom: 24px; }
-.crumbs a:hover { color: var(--brand-500); text-decoration: underline; }
+.crumbs a:hover { color: var(--brand-ink); text-decoration: underline; }
 .product__main { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
 
 .gallery { position: sticky; top: calc(var(--header-h) + 54px); }
-.gallery__stage { position: relative; aspect-ratio: 1 / 1; border-radius: 32px; background: var(--gradient-soft); display: grid; place-items: center; overflow: hidden; }
-.gallery__stage::before { content: ''; position: absolute; width: 60%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgb(99 102 241 / 0.25), transparent 70%); }
+.gallery__stage { position: relative; aspect-ratio: 1 / 1; border-radius: var(--radius-lg); background: var(--gradient-soft); display: grid; place-items: center; overflow: hidden; }
 .gallery__badges { position: absolute; top: 20px; left: 20px; display: flex; gap: 8px; z-index: 1; }
 .gallery__img { position: absolute; top: 9%; bottom: 9%; left: 50%; translate: -50% 0; aspect-ratio: 1 / 2; }
 .gallery__thumbs { display: flex; gap: 12px; margin-top: 14px; }
-.thumb { width: 84px; height: 84px; padding: 8px; border-radius: 16px; border: 2px solid var(--border); background: var(--surface); display: grid; place-items: center; transition: border-color 0.2s; }
+.thumb { width: 84px; height: 84px; padding: 8px; border-radius: var(--radius); border: 2px solid var(--border); background: var(--surface); display: grid; place-items: center; transition: border-color 0.2s; }
 .thumb > :deep(svg), .thumb > :deep(img) { height: 64px; width: auto; filter: none; }
-.thumb.is-active { border-color: var(--brand-500); }
+.thumb.is-active { border-color: var(--brand-ink); }
 .gallery__note { margin-top: 10px; font-size: 0.78rem; color: var(--text-soft); }
 .swap-enter-active, .swap-leave-active { transition: opacity 0.25s, transform 0.3s var(--ease); }
 .swap-enter-from { opacity: 0; transform: scale(0.95) rotate(-3deg); }
 .swap-leave-to { opacity: 0; transform: scale(1.03); }
 
-.info__brand { font-weight: 700; color: var(--brand-500); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; }
-:root[data-theme='dark'] .info__brand { color: #a5b4fc; }
+.info__brand { font-weight: 700; color: var(--brand-ink); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; }
 .info__brand:hover { text-decoration: underline; }
 .info__title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin: 8px 0 12px; }
 .info__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .info__desc { color: var(--text-muted); margin: 18px 0; font-size: 1.02rem; }
 .price-box { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; padding: 18px 20px; border-radius: var(--radius); background: var(--bg-soft); border: 1px solid var(--border); }
-.price-box__now { font-family: var(--font-display); font-size: 2rem; font-weight: 800; }
+.price-box__now { font-family: var(--font-display); font-size: 2rem; font-weight: 700; }
 .price-box__old { color: var(--text-soft); font-size: 1.05rem; }
 .picker { margin-top: 22px; }
 .picker__label { margin-bottom: 10px; font-size: 0.92rem; color: var(--text-muted); }
@@ -321,18 +316,18 @@ function onRadioKey(e, list, current, set) {
 .swatch[aria-checked='true'] { box-shadow: 0 0 0 2px var(--brand-500); }
 .swatch svg { width: 18px; height: 18px; color: #fff; filter: drop-shadow(0 0 2px rgb(0 0 0 / 0.8)); }
 .storages { display: flex; flex-wrap: wrap; gap: 10px; }
-.storage { display: grid; gap: 2px; padding: 10px 18px; min-width: 120px; border-radius: 14px; border: 2px solid var(--border); background: var(--surface); text-align: left; transition: border-color 0.2s, background-color 0.2s; }
+.storage { display: grid; gap: 2px; padding: 10px 18px; min-width: 120px; border-radius: var(--radius); border: 2px solid var(--border); background: var(--surface); text-align: left; transition: border-color 0.2s, background-color 0.2s; }
 .storage small { color: var(--text-muted); font-size: 0.8rem; }
 .storage:hover { border-color: var(--brand-400); }
-.storage[aria-checked='true'] { border-color: var(--brand-500); background: var(--brand-50); }
+.storage[aria-checked='true'] { border-color: var(--brand-ink); background: var(--brand-50); }
 .info__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .info__order { flex: 1; min-width: 240px; }
 .info__secondary { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 12px; }
-.info__secondary .is-fav { color: #e11d48; }
+.info__secondary .is-fav { color: var(--promo); }
 .info__perks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
 .info__perks li { display: flex; gap: 10px; font-size: 0.87rem; color: var(--text-muted); }
 .info__perks strong { color: var(--text); }
-.info__perks svg { width: 22px; height: 22px; color: var(--brand-500); flex-shrink: 0; }
+.info__perks svg { width: 22px; height: 22px; color: var(--brand-ink); flex-shrink: 0; }
 
 .details { margin-top: 64px; }
 .details__tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
@@ -344,7 +339,7 @@ function onRadioKey(e, list, current, set) {
 .specs tr + tr { border-top: 1px solid var(--border); }
 .specs th, .specs td { padding: 14px 8px; text-align: left; vertical-align: top; }
 .specs th { width: 38%; font-weight: 600; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
-.specs th svg { width: 18px; height: 18px; color: var(--brand-500); flex-shrink: 0; }
+.specs th svg { width: 18px; height: 18px; color: var(--brand-ink); flex-shrink: 0; }
 .related { margin-top: 72px; }
 .buybar { display: none; }
 

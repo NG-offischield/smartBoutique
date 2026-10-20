@@ -20,6 +20,6 @@ defineProps({ message: { type: String, default: 'La page que vous cherchez n’e
 
 <style scoped>
 .nf { text-align: center; padding: 96px 20px; }
-.nf__code { font-family: var(--font-display); font-size: clamp(6rem, 18vw, 10rem); font-weight: 800; line-height: 1; margin: 0; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.nf__code { font-family: var(--font-display); font-size: clamp(6rem, 18vw, 10rem); font-weight: 700; line-height: 1; margin: 0; color: var(--brand-ink); }
 .nf__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
 </style>

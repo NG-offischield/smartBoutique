@@ -28,7 +28,7 @@ const uid = useId()
 .faq__item.is-open { border-color: var(--brand-400); box-shadow: var(--shadow-sm); }
 .faq__q { margin: 0; font-size: 1rem; }
 .faq__q button { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: none; border: none; text-align: left; font-weight: 600; min-height: 56px; }
-.faq__q svg { width: 20px; height: 20px; flex-shrink: 0; transition: transform 0.3s var(--ease); color: var(--brand-500); }
+.faq__q svg { width: 20px; height: 20px; flex-shrink: 0; transition: transform 0.3s var(--ease); color: var(--brand-ink); }
 .is-open .faq__q svg { transform: rotate(180deg); }
 .faq__a { padding: 0 20px 18px; color: var(--text-muted); }
 .faq__a p { margin: 0; }

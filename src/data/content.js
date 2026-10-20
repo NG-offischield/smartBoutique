@@ -24,12 +24,12 @@ export const steps = [
   { title: 'Recevez', text: 'Retrait en boutique ou livraison, paiement à la réception.' }
 ]
 
-export const testimonials = [
-  { name: 'Arielle M.', city: 'Yaoundé – Bastos', rating: 5, text: 'J’ai commandé mon Galaxy A56 sur WhatsApp le matin, il était chez moi l’après-midi. Service impeccable !' },
-  { name: 'Junior T.', city: 'Yaoundé – Mvog-Mbi', rating: 5, text: 'iPhone 15 reconditionné comme neuf, batterie à 92 %. Ils ont même transféré toutes mes données.' },
-  { name: 'Sandrine K.', city: 'Douala – Akwa', rating: 5, text: 'Très bons conseils pour choisir mon Tecno Camon. Prix honnête et livraison sérieuse jusqu’à Douala.' },
-  { name: 'Patrick E.', city: 'Yaoundé – Essos', rating: 4, text: 'Bonne reprise de mon ancien téléphone, j’ai pu passer au Redmi Note 14 Pro+ sans me ruiner.' }
-]
+/**
+ * Avis clients : ajoutez ici de VRAIS avis (Google, WhatsApp, Facebook) avec l'accord du client.
+ * Tant que la liste est vide, la section « avis » n'est pas affichée.
+ * Exemple : { name: 'Prénom N.', city: 'Yaoundé – Bastos', text: 'Le texte de l’avis.' }
+ */
+export const testimonials = []
 
 export const faq = [
   { q: 'Les téléphones sont-ils neufs et d’origine ?', a: 'Oui. Nos téléphones neufs sont scellés d’usine. Les reconditionnés sont des appareils d’origine, testés sur 40 points, nettoyés et garantis 6 mois.' },
@@ -39,11 +39,4 @@ export const faq = [
   { q: 'Quelle est la durée de la garantie ?', a: '12 mois pour les téléphones neufs et 6 mois pour les reconditionnés, hors casse et oxydation. Le SAV est assuré directement en boutique.' },
   { q: 'Puis-je échanger mon ancien téléphone ?', a: 'Absolument. Envoyez-nous des photos et le modèle de votre appareil sur WhatsApp : nous vous proposons une estimation de reprise à déduire de votre achat.' },
   { q: 'Les prix affichés sont-ils définitifs ?', a: 'Les prix sont indicatifs et peuvent évoluer selon les arrivages. Le prix exact vous est confirmé sur WhatsApp avant tout achat.' }
-]
-
-export const stats = [
-  { value: 17, suffix: '', label: 'marques disponibles' },
-  { value: 2500, suffix: '+', label: 'clients satisfaits' },
-  { value: 12, suffix: ' mois', label: 'de garantie' },
-  { value: 4.9, suffix: '/5', label: 'note moyenne' }
 ]

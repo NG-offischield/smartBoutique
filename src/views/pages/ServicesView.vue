@@ -37,7 +37,7 @@ import { contact } from '@/controllers/contactController'
 .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .service { display: flex; flex-direction: column; padding: 28px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); transition: all 0.3s var(--ease); }
 .service:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.service__icon { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--gradient); color: #fff; margin-bottom: 18px; }
+.service__icon { width: 56px; height: 56px; border-radius: var(--radius); display: grid; place-items: center; background: var(--brand-50); color: var(--brand-ink); margin-bottom: 18px; }
 .service__icon svg { width: 26px; height: 26px; }
 .service h2 { font-size: 1.2rem; }
 .service p { color: var(--text-muted); flex: 1; }

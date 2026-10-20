@@ -70,7 +70,7 @@ const year = new Date().getFullYear()
 </template>
 
 <style scoped>
-.footer { background: #0a0f1f; color: #c3c9da; padding-top: 64px; margin-top: auto; }
+.footer { background: #0a1712; color: #c2ccc5; padding-top: 64px; margin-top: auto; }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.4fr; gap: 40px; padding-bottom: 48px; }
 .footer__about p { margin: 18px 0; max-width: 340px; font-size: 0.92rem; }
 .footer__title { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
@@ -82,7 +82,7 @@ const year = new Date().getFullYear()
 .footer__social a:hover { background: var(--whatsapp); color: #fff; }
 .footer__social svg { width: 20px; height: 20px; }
 .footer__contact li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; }
-.footer__contact svg { width: 18px; height: 18px; margin-top: 3px; color: #818cf8; }
+.footer__contact svg { width: 18px; height: 18px; margin-top: 3px; color: var(--accent); }
 .footer__bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 20px; padding-bottom: 96px; border-top: 1px solid rgb(255 255 255 / 0.08); font-size: 0.85rem; }
 .footer__bottom p { margin: 0; }
 @media (max-width: 960px) { .footer__grid { grid-template-columns: 1fr 1fr; } }

@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { Heart, ArrowLeftRight, Wifi } from 'lucide-vue-next'
 import ProductVisual from './ProductVisual.vue'
-import StarRating from './StarRating.vue'
 import WhatsAppIcon from './WhatsAppIcon.vue'
 import { BADGES } from '@/models/Product'
 import { formatPrice } from '@/models/format'
@@ -66,7 +65,7 @@ const waLink = computed(() => contact.whatsappLink(contact.orderMessage(props.pr
     <div class="pcard__body">
       <div class="pcard__meta">
         <span class="pcard__brand">{{ product.brand.name }}</span>
-        <StarRating :value="product.rating" :reviews="product.reviews" />
+        <span v-if="product.year" class="pcard__year">{{ product.year }}</span>
       </div>
       <h3 class="pcard__title">
         <RouterLink :to="product.url" class="pcard__link">{{ product.name }}</RouterLink>
@@ -120,8 +119,8 @@ const waLink = computed(() => contact.whatsappLink(contact.orderMessage(props.pr
 .icon-btn--sm svg { width: 17px; height: 17px; }
 .pcard__body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
 .pcard__meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.pcard__brand { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-500); }
-:root[data-theme='dark'] .pcard__brand { color: #a5b4fc; }
+.pcard__brand { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-ink); }
+.pcard__year { font-size: 0.75rem; color: var(--text-soft); font-variant-numeric: tabular-nums; }
 .pcard__title { font-size: 1.05rem; margin: 0; }
 .pcard__link::after { content: ''; position: absolute; inset: 0; z-index: 0; }
 .pcard__link:focus-visible { outline: none; }
@@ -131,14 +130,13 @@ const waLink = computed(() => contact.whatsappLink(contact.orderMessage(props.pr
 .pcard__specs { display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.75rem; color: var(--text-muted); }
 .pcard__specs li { padding: 2px 8px; border-radius: 6px; background: var(--surface-2); display: inline-flex; align-items: center; gap: 4px; }
 .pcard__specs svg { width: 12px; height: 12px; }
-.pcard__specs .is-5g { color: var(--brand-500); font-weight: 600; }
-:root[data-theme='dark'] .pcard__specs .is-5g { color: #a5b4fc; }
+.pcard__specs .is-5g { color: var(--brand-ink); font-weight: 600; }
 .pcard__colors { display: flex; gap: 6px; }
 .pcard__colors li { width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgb(0 0 0 / 0.15); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.3); }
 .pcard__footer { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px; margin-top: auto; padding-top: 6px; }
 .pcard__price { display: grid; line-height: 1.25; min-width: 0; }
 .pcard__from { font-size: 0.72rem; color: var(--text-soft); }
-.pcard__price strong { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; }
+.pcard__price strong { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; }
 .pcard__price s { font-size: 0.8rem; color: var(--text-soft); }
 .pcard__wa {
   flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
@@ -155,7 +153,8 @@ const waLink = computed(() => contact.whatsappLink(contact.orderMessage(props.pr
 
 @media (max-width: 640px) {
   .pcard__body { padding: 12px; gap: 6px; }
-  .pcard__title { font-size: 0.95rem; }
+  .pcard__year { font-size: 0.75rem; color: var(--text-soft); font-variant-numeric: tabular-nums; }
+.pcard__title { font-size: 0.95rem; }
   .pcard__price strong { font-size: 1rem; }
   .pcard__specs li:nth-child(2) { display: none; }
   .pcard__footer .pcard__wa { display: none; }

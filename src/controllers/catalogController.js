@@ -6,8 +6,7 @@ export const SORTS = [
   { value: 'pertinence', label: 'Pertinence' },
   { value: 'prix-asc', label: 'Prix croissant' },
   { value: 'prix-desc', label: 'Prix décroissant' },
-  { value: 'recent', label: 'Plus récents' },
-  { value: 'note', label: 'Mieux notés' }
+  { value: 'recent', label: 'Plus récents' }
 ]
 
 export const PAGE_SIZE = 12
@@ -38,8 +37,7 @@ export function applyFilters(products, f) {
     'prix-asc': (a, b) => a.basePrice - b.basePrice,
     'prix-desc': (a, b) => b.basePrice - a.basePrice,
     recent: (a, b) => (b.year ?? 0) - (a.year ?? 0) || b.basePrice - a.basePrice,
-    note: (a, b) => b.rating - a.rating || b.reviews - a.reviews,
-    pertinence: (a, b) => Number(b.featured) - Number(a.featured) || b.reviews - a.reviews
+    pertinence: (a, b) => Number(b.featured) - Number(a.featured) || (b.year ?? 0) - (a.year ?? 0)
   }
   list = [...list].sort(sorters[f.sort] || sorters.pertinence)
   return list

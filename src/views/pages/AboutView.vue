@@ -3,8 +3,18 @@ import { ArrowRight } from 'lucide-vue-next'
 import PageHero from '@/views/components/PageHero.vue'
 import PhoneMockup from '@/views/components/PhoneMockup.vue'
 import DynamicIcon from '@/views/components/DynamicIcon.vue'
-import { perks, stats } from '@/data/content'
+import { perks } from '@/data/content'
+import { productRepository } from '@/services/ProductRepository'
+import { formatPrice } from '@/models/format'
 import { shop } from '@/config/shop'
+
+// Chiffres calculés à partir du catalogue réel (src/data/products.js)
+const facts = [
+  { value: productRepository.all().length, label: 'modèles au catalogue' },
+  { value: productRepository.brandsWithCount().length, label: 'marques' },
+  { value: formatPrice(productRepository.priceBounds().min), label: 'premier prix' },
+  { value: productRepository.all().filter((p) => p.condition === 'reconditionne').length, label: 'reconditionnés testés' }
+]
 
 const values = [
   { icon: 'BadgeCheck', title: 'Authenticité', text: 'Uniquement des appareils d’origine, traçables et contrôlés.' },
@@ -33,7 +43,7 @@ const values = [
         </div>
         <div class="about__visual" aria-hidden="true">
           <PhoneMockup color="#1428A0" variant="trio" brand="Samsung" />
-          <PhoneMockup color="#4F46E5" variant="apple-pro" view="front" island />
+          <PhoneMockup color="#135C45" variant="apple-pro" view="front" island />
           <PhoneMockup color="#FF6900" variant="square" brand="Xiaomi" />
         </div>
       </div>
@@ -49,7 +59,7 @@ const values = [
           </li>
         </ul>
         <ul class="stats">
-          <li v-for="s in stats" :key="s.label"><strong>{{ s.value.toLocaleString('fr-FR') }}{{ s.suffix }}</strong><span>{{ s.label }}</span></li>
+          <li v-for="f in facts" :key="f.label"><strong>{{ f.value }}</strong><span>{{ f.label }}</span></li>
         </ul>
         <ul class="perks">
           <li v-for="p in perks" :key="p.title"><DynamicIcon :name="p.icon" /><span><strong>{{ p.title }}</strong> — {{ p.text }}</span></li>
@@ -69,17 +79,16 @@ const values = [
 .center-title { text-align: center; margin-bottom: 32px; }
 .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .value { padding: 28px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
-.value__icon { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--brand-50); color: var(--brand-500); margin-bottom: 16px; }
-:root[data-theme='dark'] .value__icon { color: #a5b4fc; }
+.value__icon { width: 52px; height: 52px; border-radius: var(--radius); display: grid; place-items: center; background: var(--brand-50); color: var(--brand-ink); margin-bottom: 16px; }
 .value__icon svg { width: 24px; height: 24px; }
 .value p { color: var(--text-muted); margin: 0; }
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0; border-radius: var(--radius-lg); background: var(--gradient); color: #fff; padding: 32px; gap: 16px; text-align: center; }
-.stats strong { display: block; font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.1; }
-.stats span { opacity: 0.85; font-size: 0.9rem; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 40px 0; padding: 24px 0; gap: 16px; border-block: 1px solid var(--border); }
+.stats strong { display: block; font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.stats span { color: var(--text-muted); font-size: 0.9rem; }
 .perks { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .perks li { display: flex; gap: 12px; align-items: flex-start; color: var(--text-muted); }
 .perks strong { color: var(--text); }
-.perks svg { width: 22px; height: 22px; color: var(--brand-500); flex-shrink: 0; margin-top: 2px; }
+.perks svg { width: 22px; height: 22px; color: var(--brand-ink); flex-shrink: 0; margin-top: 2px; }
 @media (max-width: 900px) {
   .about { grid-template-columns: 1fr; }
   .about__visual { height: 300px; }
@@ -87,5 +96,5 @@ const values = [
   .about__visual > svg:nth-child(2) { width: 130px; height: 260px; }
   .values { grid-template-columns: 1fr; }
 }
-@media (max-width: 640px) { .stats { grid-template-columns: 1fr 1fr; padding: 24px 16px; } .perks { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .stats { grid-template-columns: 1fr 1fr; padding: 20px 0; } .perks { grid-template-columns: 1fr; } }
 </style>

@@ -44,10 +44,9 @@ const brands = productRepository.brandsWithCount().map(({ brand, count }) => {
 .brand__phone { width: 44px; height: 88px; flex-shrink: 0; transition: transform 0.4s var(--ease); }
 .brand:hover .brand__phone { transform: rotate(-8deg) scale(1.05); }
 .brand__body { display: grid; gap: 2px; flex: 1; min-width: 0; }
-.brand__name { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; }
+.brand__name { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; }
 .brand__tag { font-size: 0.85rem; color: var(--text-muted); }
-.brand__meta { font-size: 0.8rem; font-weight: 600; color: var(--brand-500); margin-top: 4px; }
-:root[data-theme='dark'] .brand__meta { color: #a5b4fc; }
+.brand__meta { font-size: 0.8rem; font-weight: 600; color: var(--brand-ink); margin-top: 4px; }
 .brand__arrow { width: 20px; height: 20px; color: var(--text-soft); transition: transform 0.2s, color 0.2s; flex-shrink: 0; }
-.brand:hover .brand__arrow { transform: translateX(4px); color: var(--brand-500); }
+.brand:hover .brand__arrow { transform: translateX(4px); color: var(--brand-ink); }
 </style>

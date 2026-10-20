@@ -19,8 +19,8 @@ const icons = { success: CircleCheck, warning: TriangleAlert, info: Info }
 
 <style scoped>
 .toasts { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 100; display: grid; gap: 8px; width: min(440px, calc(100vw - 32px)); pointer-events: none; }
-.toast { pointer-events: auto; display: flex; align-items: center; gap: 10px; padding: 12px 12px 12px 16px; border-radius: 14px; background: #111827; color: #fff; box-shadow: 0 16px 40px -12px rgb(0 0 0 / 0.5); font-size: 0.9rem; font-weight: 500; }
-.toast__icon { width: 20px; height: 20px; flex-shrink: 0; color: #93c5fd; }
+.toast { pointer-events: auto; display: flex; align-items: center; gap: 10px; padding: 12px 12px 12px 16px; border-radius: var(--radius); background: #14201b; color: #fff; box-shadow: 0 16px 40px -12px rgb(0 0 0 / 0.5); font-size: 0.9rem; font-weight: 500; }
+.toast__icon { width: 20px; height: 20px; flex-shrink: 0; color: #7fd0ad; }
 .toast--success .toast__icon { color: #4ade80; }
 .toast--warning .toast__icon { color: #fbbf24; }
 .toast span { flex: 1; }

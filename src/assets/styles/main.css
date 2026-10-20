@@ -3,44 +3,53 @@
    Couleurs, typographie et composants de base.
    Pour changer l'identité visuelle, modifiez les variables ci-dessous.
    ============================================================ */
+/* Direction : le comptoir d'une boutique de quartier soignée à Yaoundé.
+   Vert forêt (confiance, la couleur du Cameroun), safran pour les prix et les signaux,
+   gris légèrement verdi pour les fonds. Angles nets, peu d'ombres. */
 :root {
-  --brand-600: #4338ca;
-  --brand-500: #4f46e5;
-  --brand-400: #6366f1;
-  --brand-100: #e0e7ff;
-  --brand-50: #eef2ff;
-  --cyan-500: #06b6d4;
-  --gold-400: #fcd34d;
+  --brand-700: #082c21;
+  --brand-600: #0d4434;
+  --brand-500: #135c45;
+  --brand-400: #2f8a6b;
+  --brand-100: #d3e6dc;
+  --brand-50: #ebf3ee;
+  --brand-ink: #135c45;      /* texte d'accent lisible sur le fond */
+  --accent: #f2a93b;         /* safran : prix, étiquettes, soulignés */
+  --accent-ink: #3a2500;     /* texte posé sur le safran */
+  --promo: #c8401f;
+  --band: #0d4434;           /* bandeaux sombres (barre du haut, appel à l'action) */
+  --band-text: #f3f6f2;
   --whatsapp: #25d366;
-  --whatsapp-dark: #128c7e;
+  --whatsapp-dark: #0f7a52;
 
   --bg: #ffffff;
-  --bg-soft: #f6f7fb;
+  --bg-soft: #f3f5f1;
   --surface: #ffffff;
-  --surface-2: #f1f3f9;
-  --border: #e4e7ef;
-  --text: #0f172a;
-  --text-muted: #5b6478;
-  --text-soft: #8a93a6;
-  --success: #15803d;
-  --success-bg: #dcfce7;
-  --warning: #b45309;
-  --warning-bg: #fef3c7;
-  --danger: #b91c1c;
-  --danger-bg: #fee2e2;
+  --surface-2: #eef1ec;
+  --border: #dde3dc;
+  --text: #14201b;
+  --text-muted: #55625b;
+  --text-soft: #84908a;
+  --success: #17703f;
+  --success-bg: #dcf1e2;
+  --warning: #9a5a00;
+  --warning-bg: #fbefd6;
+  --danger: #b4321b;
+  --danger-bg: #fbe3dc;
 
-  --gradient: linear-gradient(135deg, #4338ca 0%, #4f46e5 50%, #06b6d4 100%);
-  --gradient-soft: linear-gradient(135deg, #eef2ff 0%, #ecfeff 100%);
+  /* gardés pour compatibilité : désormais des aplats, sans dégradé */
+  --gradient: var(--brand-500);
+  --gradient-soft: var(--bg-soft);
 
-  --radius-sm: 10px;
-  --radius: 16px;
-  --radius-lg: 24px;
-  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.08);
-  --shadow: 0 6px 24px -6px rgb(15 23 42 / 0.12), 0 2px 6px rgb(15 23 42 / 0.05);
-  --shadow-lg: 0 24px 60px -20px rgb(67 56 202 / 0.35);
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgb(20 32 27 / 0.08);
+  --shadow: 0 10px 30px -14px rgb(20 32 27 / 0.28);
+  --shadow-lg: 0 18px 40px -20px rgb(20 32 27 / 0.35);
 
-  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Plus Jakarta Sans Variable', var(--font-sans);
+  --font-sans: 'Instrument Sans Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Instrument Sans Variable', system-ui, sans-serif;
   --header-h: 72px;
   --container: 1240px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -48,25 +57,28 @@
 }
 
 :root[data-theme='dark'] {
-  --bg: #0b1020;
-  --bg-soft: #0f1529;
-  --surface: #141b33;
-  --surface-2: #1b2340;
-  --border: #263056;
-  --text: #eef1fa;
-  --text-muted: #a7b0c8;
-  --text-soft: #7a84a1;
-  --brand-100: #2a2f6b;
-  --brand-50: #1a1f45;
-  --success: #4ade80;
-  --success-bg: #0f2e1d;
-  --warning: #fbbf24;
-  --warning-bg: #33260a;
-  --danger: #f87171;
-  --danger-bg: #3a1414;
-  --gradient-soft: linear-gradient(135deg, #161c3d 0%, #0f2733 100%);
-  --shadow: 0 8px 30px -10px rgb(0 0 0 / 0.6);
-  --shadow-lg: 0 24px 60px -20px rgb(0 0 0 / 0.7);
+  --bg: #0e1411;
+  --bg-soft: #121a16;
+  --surface: #161f1b;
+  --surface-2: #1d2823;
+  --border: #2b3832;
+  --text: #e9efea;
+  --text-muted: #a3b0a8;
+  --text-soft: #75837b;
+  --brand-500: #2f8a6b;
+  --brand-400: #4fae8b;
+  --brand-100: #23402f;
+  --brand-50: #18281f;
+  --brand-ink: #7fd0ad;
+  --band: #0a2a20;
+  --success: #6fd197;
+  --success-bg: #12301f;
+  --warning: #f5bd5c;
+  --warning-bg: #33260c;
+  --danger: #f08a72;
+  --danger-bg: #3a1a12;
+  --shadow: 0 10px 30px -12px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 18px 40px -18px rgb(0 0 0 / 0.7);
   color-scheme: dark;
 }
 
@@ -83,9 +95,9 @@ body {
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
 }
-h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 0 0.5em; letter-spacing: -0.02em; }
-h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800; }
-h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; margin: 0 0 0.5em; letter-spacing: -0.025em; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; }
 h3 { font-size: 1.2rem; font-weight: 700; }
 p { margin: 0 0 1em; }
 a { color: inherit; text-decoration: none; }
@@ -109,18 +121,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
 .section-head p { color: var(--text-muted); margin: 0; max-width: 560px; }
 .eyebrow {
-  display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-500); margin-bottom: 10px;
+  display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600;
+  color: var(--brand-ink); margin-bottom: 8px;
 }
-:root[data-theme='dark'] .eyebrow { color: #a5b4fc; }
-.text-gradient { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* Mot mis en avant : souligné safran, façon étiquette de prix */
+.text-gradient { color: inherit; background: linear-gradient(transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%); padding: 0 0.08em; }
+:root[data-theme='dark'] .text-gradient { color: var(--accent); background: none; padding: 0; }
 .muted { color: var(--text-muted); }
 
 /* ---------- Boutons ---------- */
 .btn {
   --btn-bg: var(--surface-2); --btn-fg: var(--text);
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 46px; padding: 0 20px; border-radius: 999px; border: 1px solid transparent;
+  min-height: 46px; padding: 0 20px; border-radius: var(--radius-sm); border: 1px solid transparent;
   background: var(--btn-bg); color: var(--btn-fg); font-weight: 600; font-size: 0.95rem; white-space: nowrap;
   transition: transform 0.2s var(--ease), box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
 }
@@ -128,12 +141,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn:active { transform: translateY(0); }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-.btn--primary { --btn-bg: var(--brand-500); --btn-fg: #fff; box-shadow: 0 8px 20px -8px rgb(79 70 229 / 0.6); }
+.btn--primary { --btn-bg: var(--brand-500); --btn-fg: #fff; }
 .btn--primary:hover { --btn-bg: var(--brand-600); }
-.btn--whatsapp { --btn-bg: var(--whatsapp); --btn-fg: #06341d; box-shadow: 0 8px 20px -8px rgb(37 211 102 / 0.6); }
+.btn--whatsapp { --btn-bg: var(--whatsapp); --btn-fg: #052e1b; }
 .btn--whatsapp:hover { --btn-bg: #20bd5a; }
 .btn--outline { --btn-bg: transparent; border-color: var(--border); }
-.btn--outline:hover { border-color: var(--brand-400); color: var(--brand-500); }
+.btn--outline:hover { border-color: var(--brand-400); color: var(--brand-ink); }
 .btn--ghost { --btn-bg: transparent; }
 .btn--ghost:hover { --btn-bg: var(--surface-2); }
 .btn--light { --btn-bg: #fff; --btn-fg: #1e1b4b; }
@@ -145,8 +158,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--border); background: var(--surface); color: var(--text); position: relative;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
-.icon-btn:hover { border-color: var(--brand-400); color: var(--brand-500); }
-.icon-btn.is-active { background: var(--brand-500); border-color: var(--brand-500); color: #fff; }
+.icon-btn:hover { border-color: var(--brand-400); color: var(--brand-ink); }
+.icon-btn.is-active { background: var(--brand-500); border-color: var(--brand-ink); color: #fff; }
 .icon-btn svg { width: 20px; height: 20px; }
 .counter {
   position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px;
@@ -156,25 +169,24 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Badges & puces ---------- */
 .badge {
-  display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; line-height: 1.5;
 }
 .badge--nouveau { background: var(--brand-500); color: #fff; }
-.badge--best-seller { background: #111827; color: var(--gold-400); }
-:root[data-theme='dark'] .badge--best-seller { background: #fcd34d; color: #111827; }
-.badge--promo { background: #e11d48; color: #fff; }
+.badge--best-seller { background: var(--accent); color: var(--accent-ink); }
+.badge--promo { background: var(--promo); color: #fff; }
 .badge--success { background: var(--success-bg); color: var(--success); }
 .badge--warning { background: var(--warning-bg); color: var(--warning); }
 .badge--danger { background: var(--danger-bg); color: var(--danger); }
 .badge--neutral { background: var(--surface-2); color: var(--text-muted); }
 
 .chip {
-  display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 14px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 14px; border-radius: var(--radius-sm);
   border: 1px solid var(--border); background: var(--surface); font-size: 0.875rem; font-weight: 500;
   transition: all 0.2s;
 }
 .chip:hover { border-color: var(--brand-400); }
-.chip[aria-pressed='true'], .chip.is-active { background: var(--brand-500); border-color: var(--brand-500); color: #fff; }
+.chip[aria-pressed='true'], .chip.is-active { background: var(--brand-500); border-color: var(--brand-ink); color: #fff; }
 .chip small { opacity: 0.7; }
 
 /* ---------- Formulaires ---------- */
@@ -185,7 +197,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--border); background: var(--surface); transition: border-color 0.2s, box-shadow 0.2s;
 }
 .textarea { min-height: 130px; resize: vertical; }
-.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--brand-400); box-shadow: 0 0 0 4px rgb(99 102 241 / 0.18); }
+.input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--brand-400); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-400) 25%, transparent); }
 .input[aria-invalid='true'], .textarea[aria-invalid='true'] { border-color: var(--danger); }
 .field-error { color: var(--danger); font-size: 0.8rem; font-weight: 500; }
 .select { appearance: none; padding-right: 40px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%238a93a6' stroke-width='2' stroke-linecap='round' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }

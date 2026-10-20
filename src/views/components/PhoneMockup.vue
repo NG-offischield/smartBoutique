@@ -82,7 +82,7 @@ const flash = computed(() => {
       </linearGradient>
       <linearGradient :id="ids.screen" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" :stop-color="shade(color, 0.15)" />
-        <stop offset=".55" stop-color="#312e81" />
+        <stop offset=".55" stop-color="#123a2d" />
         <stop offset="1" stop-color="#0b1020" />
       </linearGradient>
       <radialGradient :id="ids.lens" cx=".35" cy=".35" r=".7">
@@ -98,7 +98,7 @@ const flash = computed(() => {
       <rect x="9" y="9" :width="width - 18" height="382" rx="30" fill="#05070c" />
       <rect x="15" y="15" :width="width - 30" height="370" rx="25" :fill="`url(#${ids.screen})`" />
       <circle :cx="width * 0.78" cy="110" r="70" :fill="color" opacity=".35" />
-      <circle :cx="width * 0.2" cy="300" r="90" fill="#06b6d4" opacity=".18" />
+      <circle :cx="width * 0.2" cy="300" r="90" fill="#f2a93b" opacity=".16" />
       <line v-if="isFold" :x1="width / 2" y1="15" :x2="width / 2" y2="385" stroke="#000" stroke-opacity=".25" stroke-width="2" />
       <rect v-if="island" :x="width / 2 - 28" y="26" width="56" height="17" rx="8.5" fill="#000" />
       <circle v-else :cx="width / 2" cy="34" r="6" fill="#000" />

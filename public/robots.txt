@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://the-smart-boutique.vercel.app/sitemap.xml
+Sitemap: https://ng-offischield.github.io/smartBoutique/sitemap.xml

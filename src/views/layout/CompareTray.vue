@@ -24,8 +24,8 @@ const visible = computed(() => count.value > 0 && route.name !== 'compare')
 </template>
 
 <style scoped>
-.tray { position: fixed; left: 20px; bottom: 20px; z-index: 39; display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 16px; max-width: min(480px, calc(100vw - 110px)); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow); }
-.tray__icon { width: 20px; height: 20px; color: var(--brand-500); flex-shrink: 0; }
+.tray { position: fixed; left: 20px; bottom: 20px; z-index: 39; display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 16px; max-width: min(480px, calc(100vw - 110px)); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+.tray__icon { width: 20px; height: 20px; color: var(--brand-ink); flex-shrink: 0; }
 .tray__text { display: grid; line-height: 1.2; font-size: 0.9rem; min-width: 0; }
 .tray__text small { color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tray__close { width: 34px; height: 34px; border-radius: 50%; border: none; background: var(--surface-2); display: grid; place-items: center; flex-shrink: 0; }

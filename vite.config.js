@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const siteUrl = (env.VITE_SITE_URL || 'https://the-smart-boutique.vercel.app').replace(/\/$/, '')
+  const siteUrl = (env.VITE_SITE_URL || 'https://ng-offischield.github.io/smartBoutique').replace(/\/$/, '')
 
   return {
     base: env.VITE_BASE || '/',

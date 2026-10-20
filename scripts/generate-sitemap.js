@@ -6,7 +6,7 @@
 import { writeFileSync } from 'node:fs'
 import products from '../src/data/products.js'
 
-const site = (process.env.VITE_SITE_URL || 'https://the-smart-boutique.vercel.app').replace(/\/$/, '')
+const site = (process.env.VITE_SITE_URL || 'https://ng-offischield.github.io/smartBoutique').replace(/\/$/, '')
 const today = new Date().toISOString().slice(0, 10)
 const pages = ['/', '/telephones', '/marques', '/services', '/a-propos', '/contact', ...products.map((p) => `/telephones/${p.id}`)]
 

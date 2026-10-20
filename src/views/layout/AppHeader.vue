@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { Search, Sun, Moon, Heart, ArrowLeftRight, Menu, X, Phone } from 'lucide-vue-next'
+import { Search, Sun, Moon, Heart, ArrowLeftRight, Menu, X, Phone, MapPin } from 'lucide-vue-next'
 import BrandLogo from '@/views/components/BrandLogo.vue'
 import WhatsAppIcon from '@/views/components/WhatsAppIcon.vue'
 import { useTheme } from '@/controllers/themeController'
@@ -50,7 +50,7 @@ const isActive = (to) => (to === '/' ? route.path === '/' : route.path.startsWit
   <header class="header" :class="{ 'is-scrolled': scrolled }">
     <div class="topbar">
       <div class="container topbar__inner">
-        <span>📍 {{ shop.address.street }}, {{ shop.address.city }}</span>
+        <span class="topbar__addr"><MapPin aria-hidden="true" /> {{ shop.address.street }}, {{ shop.address.city }}</span>
         <span class="topbar__right">
           <a :href="contact.telLink"><Phone aria-hidden="true" /> {{ shop.phoneDisplay }}</a>
           <span class="topbar__sep" aria-hidden="true">•</span>
@@ -115,21 +115,22 @@ const isActive = (to) => (to === '/' ? route.path === '/' : route.path.startsWit
 <style scoped>
 .header { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); transition: box-shadow 0.3s, border-color 0.3s; border-bottom: 1px solid transparent; }
 .header.is-scrolled { box-shadow: 0 4px 24px -12px rgb(15 23 42 / 0.25); border-bottom-color: var(--border); }
-.topbar { background: var(--gradient); color: #fff; font-size: 0.8rem; font-weight: 500; }
+.topbar { background: var(--band); color: var(--band-text); font-size: 0.8rem; font-weight: 500; }
 .topbar__inner { display: flex; justify-content: space-between; align-items: center; min-height: 34px; gap: 12px; }
 .topbar__right { display: inline-flex; align-items: center; gap: 10px; }
 .topbar a { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
 .topbar a:hover { text-decoration: underline; }
-.topbar svg { width: 14px; height: 14px; }
+.topbar svg { width: 14px; height: 14px; color: var(--accent); }
+.topbar__addr { display: inline-flex; align-items: center; gap: 6px; }
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: var(--header-h); }
 .header__logo { flex-shrink: 0; }
 .nav { display: flex; gap: 4px; }
 .nav__link { position: relative; padding: 8px 12px; border-radius: 10px; font-weight: 500; font-size: 0.95rem; white-space: nowrap; color: var(--text-muted); transition: color 0.2s, background-color 0.2s; }
 .nav__link:hover { color: var(--text); background: var(--surface-2); }
 .nav__link.is-active { color: var(--text); font-weight: 600; }
-.nav__link.is-active::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 3px; border-radius: 3px; background: var(--gradient); }
+.nav__link.is-active::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 3px; border-radius: 0; background: var(--accent); }
 .header__tools { display: flex; align-items: center; gap: 8px; }
-.search-trigger { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 10px 0 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-soft); min-width: 200px; transition: border-color 0.2s; }
+.search-trigger { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 10px 0 14px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface-2); color: var(--text-soft); min-width: 200px; transition: border-color 0.2s; }
 .search-trigger:hover { border-color: var(--brand-400); }
 .search-trigger svg { width: 18px; height: 18px; }
 .search-trigger__label { flex: 1; text-align: left; font-size: 0.9rem; }
@@ -138,7 +139,7 @@ kbd { font-family: inherit; font-size: 0.75rem; padding: 2px 8px; border-radius:
 .drawer { position: fixed; inset: calc(var(--header-h) + 34px) 0 0 0; background: var(--bg); padding: 16px 20px 32px; overflow-y: auto; display: flex; flex-direction: column; gap: 24px; border-top: 1px solid var(--border); }
 .drawer nav { display: grid; }
 .drawer__link { display: flex; align-items: center; justify-content: space-between; padding: 14px 4px; font-size: 1.15rem; font-weight: 600; border-bottom: 1px solid var(--border); }
-.drawer__link.is-active { color: var(--brand-500); }
+.drawer__link.is-active { color: var(--brand-ink); }
 .drawer__actions { display: grid; gap: 10px; }
 .drawer-enter-active, .drawer-leave-active { transition: opacity 0.25s, transform 0.3s var(--ease); }
 .drawer-enter-from, .drawer-leave-to { opacity: 0; transform: translateY(-12px); }

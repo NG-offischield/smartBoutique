@@ -31,7 +31,6 @@ const rows = [
   { label: 'Batterie', get: (p) => p.specs.battery },
   { label: 'Système', get: (p) => p.specs.os },
   { label: 'Réseau', get: (p) => p.specs.network },
-  { label: 'Note', get: (p) => `${p.rating.toLocaleString('fr-FR')}/5 (${p.reviews} avis)` },
   { label: 'Disponibilité', get: (p) => p.stockInfo.label }
 ]
 </script>
@@ -104,7 +103,7 @@ const rows = [
 <style scoped>
 .cmp-tools { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
 .cmp-add { flex: 1; max-width: 480px; min-width: 260px; }
-.cmp-add .select { border-radius: 999px; }
+
 .cmp-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .cmp-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); }
 .cmp { width: 100%; min-width: 720px; border-collapse: collapse; table-layout: fixed; }
@@ -115,7 +114,7 @@ const rows = [
 .cmp__head { position: relative; display: grid; justify-items: center; gap: 10px; text-align: center; }
 .cmp__visual { width: 70px; height: 140px; display: block; }
 .cmp__name { font-family: var(--font-display); font-weight: 700; }
-.cmp__name:hover { color: var(--brand-500); }
+.cmp__name:hover { color: var(--brand-ink); }
 .cmp__remove { position: absolute; top: -4px; right: -4px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); display: grid; place-items: center; }
 .cmp__remove:hover { color: var(--danger); border-color: var(--danger); }
 .cmp__remove svg { width: 16px; height: 16px; }

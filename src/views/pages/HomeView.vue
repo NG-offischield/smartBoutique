@@ -1,17 +1,30 @@
 <script setup>
 import { computed, ref } from 'vue'
-import { ArrowRight, Star, Truck, ShieldCheck, Phone, MapPin, Clock, Sparkles, Zap, Wifi, Recycle, Tag, Crown, Wallet } from 'lucide-vue-next'
-import PhoneMockup from '@/views/components/PhoneMockup.vue'
+import { ArrowRight, MapPin, Phone, Clock, Zap, Wifi, Recycle, Tag, Crown, Wallet } from 'lucide-vue-next'
 import ProductCard from '@/views/components/ProductCard.vue'
+import ProductVisual from '@/views/components/ProductVisual.vue'
 import FaqList from '@/views/components/FaqList.vue'
 import DynamicIcon from '@/views/components/DynamicIcon.vue'
 import WhatsAppIcon from '@/views/components/WhatsAppIcon.vue'
 import { productRepository } from '@/services/ProductRepository'
 import { contact } from '@/controllers/contactController'
+import { formatPrice } from '@/models/format'
 import { shop, fullAddress } from '@/config/shop'
-import { perks, steps, testimonials, faq, stats } from '@/data/content'
+import { perks, steps, testimonials, faq } from '@/data/content'
 
+const all = productRepository.all()
 const brands = productRepository.brandsWithCount()
+const minPrice = productRepository.priceBounds().min
+
+// Tableau « en vitrine » : un modèle mis en avant par marque, du plus récent au plus ancien
+const showcase = (() => {
+  const seen = new Set()
+  return productRepository
+    .newest(all.length)
+    .filter((p) => (p.featured || p.badges.includes('nouveau')) && !seen.has(p.brand.id) && seen.add(p.brand.id))
+    .slice(0, 6)
+})()
+
 const tabs = [
   { id: 'featured', label: 'Coups de cœur', items: productRepository.featured(8) },
   { id: 'new', label: 'Nouveautés', items: productRepository.newest(8) },
@@ -28,70 +41,83 @@ function onTabKey(e, index) {
   document.getElementById(`tab-${next.id}`)?.focus()
 }
 
-const categories = [
-  { label: 'Petits prix', hint: 'Moins de 100 000 FCFA', icon: Wallet, query: { max: '100000' } },
-  { label: 'Milieu de gamme', hint: '100 000 – 300 000 FCFA', icon: Zap, query: { min: '100000', max: '300000' } },
-  { label: 'Haut de gamme', hint: 'Plus de 300 000 FCFA', icon: Crown, query: { min: '300000' } },
-  { label: 'Smartphones 5G', hint: 'La vitesse maximale', icon: Wifi, query: { reseau: '5G' } },
-  { label: 'Reconditionnés', hint: 'Garantis 6 mois', icon: Recycle, query: { etat: 'reconditionne' } },
-  { label: 'Promotions', hint: 'Les bonnes affaires', icon: Tag, query: { promo: '1' } }
-]
+function countFor(q) {
+  return all.filter((p) => {
+    if (q.max && p.basePrice > Number(q.max)) return false
+    if (q.min && !p.variants.some((v) => v.price >= Number(q.min))) return false
+    if (q.reseau && !p.is5G) return false
+    if (q.etat && p.condition !== q.etat) return false
+    if (q.promo && !p.isPromo) return false
+    return true
+  }).length
+}
 
-const formatStat = (s) => `${s.value.toLocaleString('fr-FR')}${s.suffix}`
-const brandCount = brands.length
+const categories = [
+  { label: 'Petits prix', hint: 'moins de 100 000 FCFA', icon: Wallet, query: { max: '100000' } },
+  { label: 'Milieu de gamme', hint: '100 000 à 300 000 FCFA', icon: Zap, query: { min: '100000', max: '300000' } },
+  { label: 'Haut de gamme', hint: 'plus de 300 000 FCFA', icon: Crown, query: { min: '300000' } },
+  { label: 'Compatibles 5G', hint: 'pour le réseau 5G', icon: Wifi, query: { reseau: '5G' } },
+  { label: 'Reconditionnés', hint: 'testés et garantis', icon: Recycle, query: { etat: 'reconditionne' } },
+  { label: 'En promotion', hint: 'prix barrés', icon: Tag, query: { promo: '1' } }
+].map((c) => ({ ...c, count: countFor(c.query) }))
 </script>
 
 <template>
   <div>
     <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"><span></span><span></span></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="hero__pill"><Sparkles aria-hidden="true" /> Nouveaux iPhone 17 &amp; Galaxy Z7 disponibles</p>
-          <h1 id="hero-title">
-            Le smartphone de vos rêves, <span class="text-gradient">au juste prix</span> à Yaoundé.
-          </h1>
+          <p class="hero__where"><MapPin aria-hidden="true" /> {{ shop.address.street }} · {{ shop.address.city }}</p>
+          <h1 id="hero-title">Le bon téléphone, au bon prix, <span class="text-gradient">sans détour</span>.</h1>
           <p class="hero__lead">
-            Apple, Samsung, Xiaomi, Tecno, Infinix, Google Pixel… {{ brandCount }} marques, neufs et reconditionnés,
-            garantis et livrés chez vous. Commandez en un clic sur WhatsApp.
+            iPhone, Galaxy, Redmi, Camon, Hot ou Pixel : neufs ou reconditionnés, vérifiés devant vous et garantis.
+            Vous choisissez ici, vous commandez sur WhatsApp, vous payez à la réception.
           </p>
           <div class="hero__cta">
             <RouterLink to="/telephones" class="btn btn--primary btn--lg">Voir le catalogue <ArrowRight /></RouterLink>
-            <a :href="contact.whatsappLink(contact.greeting() + '\nJe souhaite un conseil pour choisir un téléphone.')" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
-              <WhatsAppIcon /> Conseil gratuit
+            <a :href="contact.whatsappLink(contact.greeting() + '\nJe souhaite un conseil pour choisir un téléphone.')" target="_blank" rel="noopener" class="btn btn--outline btn--lg">
+              <WhatsAppIcon class="wa-green" /> Demander conseil
             </a>
           </div>
-          <ul class="hero__trust">
-            <li><Truck aria-hidden="true" /> Livraison le jour même</li>
-            <li><ShieldCheck aria-hidden="true" /> Garantie 12 mois</li>
-            <li><Star aria-hidden="true" /> 4,9/5 · 2 500+ clients</li>
-          </ul>
+          <dl class="hero__facts">
+            <div><dt>Modèles</dt><dd>{{ all.length }}</dd></div>
+            <div><dt>Marques</dt><dd>{{ brands.length }}</dd></div>
+            <div><dt>Premier prix</dt><dd>{{ formatPrice(minPrice) }}</dd></div>
+          </dl>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <div class="hero__phone hero__phone--1"><PhoneMockup color="#2F6B57" variant="square" brand="Tecno" /></div>
-          <div class="hero__phone hero__phone--2"><PhoneMockup color="#4F46E5" variant="apple-pro" view="front" island /></div>
-          <div class="hero__phone hero__phone--3"><PhoneMockup color="#E3732D" variant="apple-pro" brand="Apple" /></div>
-          <div class="hero__float hero__float--a"><Truck /> <span><strong>Livré en 3 h</strong><small>à Yaoundé</small></span></div>
-          <div class="hero__float hero__float--b"><span class="hero__stars">★★★★★</span><small>« Service impeccable ! »</small></div>
-        </div>
+        <aside class="board" aria-labelledby="board-title">
+          <header class="board__head">
+            <h2 id="board-title">En vitrine</h2>
+            <span>prix en FCFA</span>
+          </header>
+          <ul class="board__list">
+            <li v-for="p in showcase" :key="p.id">
+              <RouterLink :to="p.url" class="board__row">
+                <span class="board__thumb" aria-hidden="true"><ProductVisual :product="p" /></span>
+                <span class="board__name">
+                  <strong>{{ p.fullName }}</strong>
+                  <small>{{ p.baseVariant.storage }} · {{ p.conditionLabel }} · <span :class="`is-${p.stockInfo.tone}`">{{ p.stock === 'en-stock' ? 'en stock' : 'sur commande' }}</span></small>
+                </span>
+                <span class="board__price">{{ p.basePrice.toLocaleString('fr-FR') }}</span>
+              </RouterLink>
+            </li>
+          </ul>
+          <RouterLink to="/telephones" class="board__more">Les {{ all.length }} modèles <ArrowRight aria-hidden="true" /></RouterLink>
+        </aside>
       </div>
     </section>
 
-    <!-- ============ MARQUES (défilement) ============ -->
-    <section class="marquee" aria-label="Marques disponibles">
-      <div class="marquee__track">
-        <template v-for="n in 2" :key="n">
-          <RouterLink
-            v-for="{ brand } in brands"
-            :key="`${n}-${brand.id}`"
-            :to="{ path: '/telephones', query: { marques: brand.id } }"
-            class="marquee__item"
-            :tabindex="n === 2 ? -1 : undefined"
-            :aria-hidden="n === 2 ? 'true' : undefined"
-          >{{ brand.name }}</RouterLink>
-        </template>
+    <!-- ============ MARQUES ============ -->
+    <section class="brands-index" aria-labelledby="brands-title">
+      <div class="container">
+        <h2 id="brands-title" class="brands-index__title">{{ brands.length }} marques en rayon</h2>
+        <ul class="brands-index__list">
+          <li v-for="{ brand, count } in brands" :key="brand.id">
+            <RouterLink :to="{ path: '/telephones', query: { marques: brand.id } }">{{ brand.name }}<sup>{{ count }}</sup></RouterLink>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -99,18 +125,16 @@ const brandCount = brands.length
     <section class="section" aria-labelledby="cat-title">
       <div class="container">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Trouvez vite</p>
-            <h2 id="cat-title">Quel téléphone cherchez-vous ?</h2>
-          </div>
-          <RouterLink to="/marques" class="btn btn--outline">Toutes les marques <ArrowRight /></RouterLink>
+          <h2 id="cat-title">Par budget ou par besoin</h2>
+          <RouterLink to="/marques" class="btn btn--outline btn--sm">Toutes les marques <ArrowRight /></RouterLink>
         </div>
         <ul class="cats">
-          <li v-for="(c, i) in categories" :key="c.label" v-reveal="i * 60">
+          <li v-for="c in categories" :key="c.label">
             <RouterLink :to="{ path: '/telephones', query: c.query }" class="cat">
-              <span class="cat__icon"><component :is="c.icon" aria-hidden="true" /></span>
+              <component :is="c.icon" class="cat__icon" aria-hidden="true" />
               <span class="cat__label">{{ c.label }}</span>
               <span class="cat__hint">{{ c.hint }}</span>
+              <span class="cat__count">{{ c.count }} modèles</span>
             </RouterLink>
           </li>
         </ul>
@@ -121,10 +145,7 @@ const brandCount = brands.length
     <section class="section section--soft" aria-labelledby="sel-title">
       <div class="container">
         <div class="section-head">
-          <div>
-            <p class="eyebrow">Notre sélection</p>
-            <h2 id="sel-title">Les téléphones du moment</h2>
-          </div>
+          <h2 id="sel-title">Les téléphones du moment</h2>
           <div class="tabs" role="tablist" aria-label="Sélection de téléphones">
             <button
               v-for="(t, i) in tabs"
@@ -132,7 +153,7 @@ const brandCount = brands.length
               :key="t.id"
               type="button"
               role="tab"
-              class="chip"
+              class="tab"
               :class="{ 'is-active': activeTab === t.id }"
               :aria-selected="activeTab === t.id"
               aria-controls="tab-panel"
@@ -148,7 +169,7 @@ const brandCount = brands.length
           </TransitionGroup>
         </div>
         <div class="center">
-          <RouterLink to="/telephones" class="btn btn--primary btn--lg">Voir les {{ productRepository.all().length }} téléphones <ArrowRight /></RouterLink>
+          <RouterLink to="/telephones" class="btn btn--primary btn--lg">Voir les {{ all.length }} téléphones <ArrowRight /></RouterLink>
         </div>
       </div>
     </section>
@@ -156,19 +177,13 @@ const brandCount = brands.length
     <!-- ============ AVANTAGES ============ -->
     <section class="section" aria-labelledby="perks-title">
       <div class="container">
-        <div class="section-head section-head--center">
-          <p class="eyebrow">Pourquoi nous choisir</p>
-          <h2 id="perks-title">Acheter en toute confiance</h2>
-        </div>
+        <h2 id="perks-title">Ce que vous avez en achetant chez nous</h2>
         <ul class="perks">
-          <li v-for="(p, i) in perks" :key="p.title" v-reveal="i * 80" class="perk">
-            <span class="perk__icon"><DynamicIcon :name="p.icon" /></span>
+          <li v-for="p in perks" :key="p.title" class="perk">
+            <DynamicIcon :name="p.icon" class="perk__icon" />
             <h3>{{ p.title }}</h3>
             <p>{{ p.text }}</p>
           </li>
-        </ul>
-        <ul class="stats">
-          <li v-for="s in stats" :key="s.label"><strong>{{ formatStat(s) }}</strong><span>{{ s.label }}</span></li>
         </ul>
       </div>
     </section>
@@ -177,13 +192,12 @@ const brandCount = brands.length
     <section class="section section--soft" aria-labelledby="steps-title">
       <div class="container steps-wrap">
         <div>
-          <p class="eyebrow">Simple et rapide</p>
           <h2 id="steps-title">Commander en 3 étapes</h2>
-          <p class="muted">Pas de compte à créer, pas de paiement en ligne : vous échangez directement avec notre équipe et payez à la réception.</p>
-          <a :href="contact.whatsappLink(contact.greeting())" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg"><WhatsAppIcon /> Démarrer sur WhatsApp</a>
+          <p class="muted">Pas de compte à créer ni de paiement en ligne : vous parlez directement à la boutique et vous payez à la réception.</p>
+          <a :href="contact.whatsappLink(contact.greeting())" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg"><WhatsAppIcon /> Écrire sur WhatsApp</a>
         </div>
         <ol class="steps">
-          <li v-for="(s, i) in steps" :key="s.title" v-reveal="i * 100" class="step">
+          <li v-for="(s, i) in steps" :key="s.title" class="step">
             <span class="step__num" aria-hidden="true">{{ i + 1 }}</span>
             <div>
               <h3>{{ s.title }}</h3>
@@ -194,60 +208,47 @@ const brandCount = brands.length
       </div>
     </section>
 
-    <!-- ============ AVIS ============ -->
-    <section class="section" aria-labelledby="reviews-title">
+    <!-- ============ AVIS (affichés seulement s'il y en a) ============ -->
+    <section v-if="testimonials.length" class="section" aria-labelledby="reviews-title">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Ils nous font confiance</p>
-            <h2 id="reviews-title">Ce que disent nos clients</h2>
-          </div>
-        </div>
+        <h2 id="reviews-title">Ce que disent nos clients</h2>
         <ul class="reviews">
-          <li v-for="(t, i) in testimonials" :key="t.name" v-reveal="i * 80" class="review">
-            <p class="review__stars" :aria-label="`${t.rating} étoiles sur 5`">{{ '★'.repeat(t.rating) }}<span class="review__off">{{ '★'.repeat(5 - t.rating) }}</span></p>
+          <li v-for="t in testimonials" :key="t.name" class="review">
             <blockquote>« {{ t.text }} »</blockquote>
-            <p class="review__who"><span class="review__avatar" aria-hidden="true">{{ t.name[0] }}</span><span><strong>{{ t.name }}</strong><small>{{ t.city }}</small></span></p>
+            <p class="review__who"><strong>{{ t.name }}</strong><small>{{ t.city }}</small></p>
           </li>
         </ul>
       </div>
     </section>
 
     <!-- ============ FAQ ============ -->
-    <section class="section section--soft" aria-labelledby="faq-title">
+    <section class="section" aria-labelledby="faq-title">
       <div class="container faq-wrap">
         <div>
-          <p class="eyebrow">Questions fréquentes</p>
-          <h2 id="faq-title">Vous avez des questions ?</h2>
-          <p class="muted">Vous ne trouvez pas votre réponse ? Notre équipe vous répond sur WhatsApp en quelques minutes.</p>
+          <h2 id="faq-title">Questions fréquentes</h2>
+          <p class="muted">Vous ne trouvez pas la réponse ? Posez votre question sur WhatsApp, on vous répond rapidement.</p>
           <RouterLink to="/contact" class="btn btn--outline">Nous contacter <ArrowRight /></RouterLink>
         </div>
         <FaqList :items="faq.slice(0, 5)" />
       </div>
     </section>
 
-    <!-- ============ CTA / VISITE ============ -->
-    <section class="section" aria-labelledby="visit-title">
-      <div class="container">
-        <div class="visit" v-reveal>
-          <div class="visit__content">
-            <p class="eyebrow eyebrow--light">Venez nous voir</p>
-            <h2 id="visit-title">Passez en boutique, testez avant d’acheter.</h2>
-            <ul class="visit__info">
-              <li><MapPin aria-hidden="true" /><a :href="contact.mapsLink" target="_blank" rel="noopener">{{ fullAddress }}</a></li>
-              <li><Phone aria-hidden="true" /><a :href="contact.telLink">{{ shop.phoneDisplay }}</a> (appel &amp; WhatsApp)</li>
-              <li><Clock aria-hidden="true" />{{ shop.openingHours[0].days }} : {{ shop.openingHours[0].hours }}</li>
-            </ul>
-            <div class="hero__cta">
-              <a :href="contact.telLink" class="btn btn--light btn--lg"><Phone /> Appeler</a>
-              <a :href="contact.whatsappLink(contact.greeting())" target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg"><WhatsAppIcon /> WhatsApp</a>
-            </div>
-          </div>
-          <div class="visit__phones" aria-hidden="true">
-            <PhoneMockup color="#1428A0" variant="trio" brand="Samsung" />
-            <PhoneMockup color="#E8742C" variant="square" view="front" />
-          </div>
+    <!-- ============ VISITE ============ -->
+    <section class="visit" aria-labelledby="visit-title">
+      <div class="container visit__inner">
+        <div>
+          <h2 id="visit-title">Passez à la boutique, testez avant d’acheter.</h2>
+          <p class="visit__lead">Tous les téléphones en stock peuvent être pris en main sur place.</p>
         </div>
+        <ul class="visit__info">
+          <li><MapPin aria-hidden="true" /><a :href="contact.mapsLink" target="_blank" rel="noopener">{{ fullAddress }}</a></li>
+          <li><Phone aria-hidden="true" /><a :href="contact.telLink">{{ shop.phoneDisplay }}</a><span class="visit__note">appel et WhatsApp</span></li>
+          <li><Clock aria-hidden="true" /><span>{{ shop.openingHours[0].days }}, {{ shop.openingHours[0].hours }}</span></li>
+          <li class="visit__cta">
+            <a :href="contact.whatsappLink(contact.greeting())" target="_blank" rel="noopener" class="btn btn--whatsapp"><WhatsAppIcon /> WhatsApp</a>
+            <RouterLink to="/contact" class="btn btn--light">Plan d’accès</RouterLink>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
@@ -255,122 +256,115 @@ const brandCount = brands.length
 
 <style scoped>
 /* Hero */
-.hero { position: relative; overflow: hidden; padding: clamp(40px, 7vw, 88px) 0 clamp(48px, 7vw, 96px); }
-.hero__bg span { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; }
-.hero__bg span:first-child { width: 520px; height: 520px; background: #818cf8; top: -160px; right: -120px; }
-.hero__bg span:last-child { width: 420px; height: 420px; background: #67e8f9; bottom: -200px; left: -140px; opacity: 0.35; }
-:root[data-theme='dark'] .hero__bg span { opacity: 0.25; }
-.hero__inner { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
-.hero__pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600; box-shadow: var(--shadow-sm); }
-.hero__pill svg { width: 16px; height: 16px; color: var(--brand-500); }
-.hero h1 { margin: 20px 0 18px; }
-.hero__lead { font-size: 1.12rem; color: var(--text-muted); max-width: 560px; }
-.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; }
-.hero__trust { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
-.hero__trust li { display: inline-flex; align-items: center; gap: 8px; }
-.hero__trust svg { width: 18px; height: 18px; color: var(--brand-500); }
-.hero__visual { position: relative; height: 520px; }
-.hero__phone { position: absolute; width: 190px; height: 380px; animation: float 6s ease-in-out infinite; }
-.hero__phone--1 { left: 4%; top: 70px; transform: rotate(-12deg); animation-delay: -2s; }
-.hero__phone--2 { left: 32%; top: 10px; width: 220px; height: 440px; z-index: 2; animation-delay: -1s; }
-.hero__phone--3 { right: 2%; top: 90px; transform: rotate(10deg); animation-delay: -3s; }
-@keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
-.hero__float { position: absolute; z-index: 3; display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); font-size: 0.85rem; }
-.hero__float svg { width: 22px; height: 22px; color: var(--brand-500); }
-.hero__float span, .hero__float--b { display: grid; line-height: 1.3; }
-.hero__float small { color: var(--text-muted); }
-.hero__float--a { left: 0; bottom: 40px; }
-.hero__float--b { right: 0; top: 20px; }
-.hero__stars { color: #f59e0b; letter-spacing: 2px; }
+.hero { padding: clamp(36px, 6vw, 72px) 0 clamp(40px, 6vw, 72px); border-bottom: 1px solid var(--border); }
+.hero__inner { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.hero__content { min-width: 0; }
+.hero__where { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: var(--brand-ink); margin: 0; }
+.hero__where svg { width: 16px; height: 16px; }
+.hero h1 { font-size: clamp(2.3rem, 5vw, 4rem); font-weight: 700; margin: 16px 0 18px; max-width: 14ch; }
+.hero__lead { font-size: 1.1rem; color: var(--text-muted); max-width: 54ch; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 32px; }
+.wa-green { color: var(--whatsapp-dark); }
+.hero__facts { display: flex; flex-wrap: wrap; row-gap: 12px; margin: 0; border-top: 1px solid var(--border); padding-top: 18px; }
+.hero__facts div { padding-right: 28px; margin-right: 28px; border-right: 1px solid var(--border); }
+.hero__facts div:last-child { border-right: none; }
+.hero__facts dt { font-size: 0.8rem; color: var(--text-soft); }
+.hero__facts dd { margin: 2px 0 0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 
-/* Marquee */
-.marquee { overflow: hidden; border-block: 1px solid var(--border); background: var(--bg-soft); padding: 18px 0; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee__track { display: flex; gap: 56px; width: max-content; animation: scroll 40s linear infinite; }
-.marquee:hover .marquee__track, .marquee:focus-within .marquee__track { animation-play-state: paused; }
-.marquee__item { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; color: var(--text-soft); white-space: nowrap; transition: color 0.2s; }
-.marquee__item:hover, .marquee__item:focus-visible { color: var(--brand-500); }
-@keyframes scroll { to { transform: translateX(-50%); } }
+/* Tableau en vitrine */
+.board { min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: hidden; }
+.board__head { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 20px; background: var(--band); color: var(--band-text); }
+.board__head h2 { font-size: 1.05rem; margin: 0; letter-spacing: 0; color: inherit; }
+.board__head span { font-size: 0.8rem; opacity: 0.75; }
+.board__list li + li { border-top: 1px dashed var(--border); }
+.board__row { display: flex; align-items: center; gap: 14px; padding: 10px 20px; transition: background-color 0.15s; }
+.board__row:hover, .board__row:focus-visible { background: var(--bg-soft); }
+.board__thumb { width: 22px; height: 44px; flex-shrink: 0; }
+.board__thumb :deep(svg) { filter: none; }
+.board__name { flex: 1; min-width: 0; display: grid; line-height: 1.3; }
+.board__name strong { font-size: 0.95rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.board__name small { color: var(--text-muted); font-size: 0.78rem; }
+.board__price { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; white-space: nowrap; padding: 2px 8px; background: var(--accent); color: var(--accent-ink); border-radius: 4px; }
+.board__more { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-top: 1px solid var(--border); font-weight: 600; color: var(--brand-ink); }
+.board__more svg { width: 18px; height: 18px; }
+.board__more:hover { background: var(--bg-soft); }
+.is-success { color: var(--success); }
+.is-warning { color: var(--warning); }
+.is-danger { color: var(--danger); }
+
+/* Index des marques */
+.brands-index { padding: 36px 0; background: var(--bg-soft); border-bottom: 1px solid var(--border); }
+.brands-index__title { font-size: 0.95rem; font-family: var(--font-sans); font-weight: 600; color: var(--text-muted); margin-bottom: 14px; letter-spacing: 0; }
+.brands-index__list { display: flex; flex-wrap: wrap; gap: 6px 26px; }
+.brands-index__list a { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.15rem, 2.2vw, 1.5rem); letter-spacing: -0.02em; color: var(--text); transition: color 0.15s; }
+.brands-index__list a:hover { color: var(--brand-ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.brands-index__list sup { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500; color: var(--text-soft); margin-left: 3px; }
 
 /* Catégories */
-.cats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
-.cat { display: flex; flex-direction: column; gap: 4px; height: 100%; padding: 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); transition: all 0.3s var(--ease); }
-.cat:hover { border-color: var(--brand-400); transform: translateY(-3px); box-shadow: var(--shadow); }
-.cat__icon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--brand-50); color: var(--brand-500); margin-bottom: 10px; transition: all 0.3s; }
-:root[data-theme='dark'] .cat__icon { color: #a5b4fc; }
-.cat:hover .cat__icon { background: var(--gradient); color: #fff; }
-.cat__icon svg { width: 22px; height: 22px; }
-.cat__label { font-weight: 700; }
-.cat__hint { font-size: 0.8rem; color: var(--text-muted); }
+.cats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.cat { display: grid; grid-template-columns: auto 1fr auto; grid-template-rows: auto auto; column-gap: 14px; align-items: center; padding: 20px 22px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background-color 0.15s; height: 100%; }
+.cat:hover { background: var(--bg-soft); }
+.cat__icon { grid-row: span 2; width: 26px; height: 26px; color: var(--brand-ink); }
+.cat__label { font-weight: 600; font-size: 1.02rem; }
+.cat__hint { grid-column: 2; font-size: 0.85rem; color: var(--text-muted); }
+.cat__count { grid-row: 1 / span 2; grid-column: 3; font-size: 0.8rem; color: var(--text-soft); font-variant-numeric: tabular-nums; }
 
-/* Tabs */
-.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+/* Onglets */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); }
+.tab { background: none; border: none; padding: 10px 14px; font-weight: 600; color: var(--text-muted); border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.tab:hover { color: var(--text); }
+.tab.is-active { color: var(--text); border-bottom-color: var(--accent); }
 .center { display: flex; justify-content: center; margin-top: 40px; }
 
 /* Avantages */
-.section-head--center { flex-direction: column; align-items: center; text-align: center; }
-.perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.perk { padding: 28px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
-.perk__icon { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; background: var(--gradient); color: #fff; margin-bottom: 18px; box-shadow: var(--shadow-lg); }
-.perk__icon svg { width: 26px; height: 26px; }
+.perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 28px; }
+.perk { border-top: 2px solid var(--text); padding-top: 18px; }
+.perk__icon { width: 26px; height: 26px; color: var(--brand-ink); margin-bottom: 12px; }
+.perk h3 { font-size: 1.08rem; margin-bottom: 6px; }
 .perk p { color: var(--text-muted); margin: 0; font-size: 0.93rem; }
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 40px; border-radius: var(--radius-lg); background: var(--gradient); color: #fff; padding: 32px; gap: 16px; text-align: center; }
-.stats strong { display: block; font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.1; }
-.stats span { opacity: 0.85; font-size: 0.9rem; }
 
 /* Étapes */
 .steps-wrap, .faq-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
-.steps { display: grid; gap: 16px; list-style: none; margin: 0; padding: 0; }
-.step { display: flex; gap: 18px; padding: 22px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
-.step__num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; background: var(--brand-50); color: var(--brand-500); }
-:root[data-theme='dark'] .step__num { color: #a5b4fc; }
+.steps { display: grid; list-style: none; margin: 0; padding: 0; }
+.step { display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.step:first-child { padding-top: 0; }
+.step__num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; background: var(--accent); color: var(--accent-ink); }
 .step h3 { margin-bottom: 4px; }
 .step p { margin: 0; color: var(--text-muted); }
 
 /* Avis */
-.reviews { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.review { display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); }
-.review__stars { margin: 0; color: #f59e0b; letter-spacing: 2px; }
-.review__off { color: var(--border); }
-.review blockquote { margin: 0; flex: 1; font-size: 0.95rem; }
-.review__who { margin: 0; display: flex; align-items: center; gap: 12px; }
-.review__who span:last-child { display: grid; line-height: 1.3; }
+.reviews { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 24px; }
+.review { padding: 22px; border: 1px solid var(--border); border-radius: var(--radius); display: grid; gap: 14px; }
+.review blockquote { margin: 0; }
+.review__who { margin: 0; display: grid; line-height: 1.3; }
 .review__who small { color: var(--text-muted); }
-.review__avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--gradient); color: #fff; display: grid; place-items: center; font-weight: 700; }
 
 /* Visite */
-.visit { position: relative; overflow: hidden; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding: clamp(28px, 5vw, 56px); border-radius: 32px; background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #0e7490 100%); color: #fff; }
-.eyebrow--light { color: #a5f3fc !important; }
-.visit h2 { color: #fff; max-width: 520px; }
-.visit__info { display: grid; gap: 12px; margin: 20px 0 8px; }
-.visit__info li { display: flex; align-items: center; gap: 12px; }
-.visit__info svg { width: 20px; height: 20px; color: #a5f3fc; flex-shrink: 0; }
-.visit__info a { text-decoration: underline; text-underline-offset: 3px; }
-.visit__phones { display: flex; justify-content: center; gap: 12px; height: 300px; }
-.visit__phones > svg { width: 150px; height: 300px; }
-.visit__phones > svg:first-child { transform: rotate(-8deg) translateY(10px); }
-.visit__phones > svg:last-child { transform: rotate(6deg); }
+.visit { background: var(--band); color: var(--band-text); padding: clamp(40px, 6vw, 64px) 0; }
+.visit__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+.visit h2 { color: #fff; max-width: 18ch; }
+.visit__lead { opacity: 0.8; margin: 0; }
+.visit__info { display: grid; gap: 14px; }
+.visit__info li { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.visit__info > li > svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
+.visit__info a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
+.visit__note { font-size: 0.85rem; opacity: 0.7; }
+.visit__cta { margin-top: 8px; gap: 12px !important; }
 
-@media (max-width: 1100px) {
-  .cats { grid-template-columns: repeat(3, 1fr); }
-  .perks, .reviews { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 900px) {
-  .hero__inner, .steps-wrap, .faq-wrap, .visit { grid-template-columns: 1fr; }
-  .hero__visual { height: 400px; max-width: 480px; margin: 0 auto; width: 100%; }
-  .hero__phone { width: 150px; height: 300px; }
-  .hero__phone--2 { width: 175px; height: 350px; }
-  .visit__phones { display: none; }
+@media (max-width: 1000px) {
+  .hero__inner, .steps-wrap, .faq-wrap, .visit__inner { grid-template-columns: 1fr; }
   .steps-wrap, .faq-wrap { gap: 32px; }
+  .perks { grid-template-columns: repeat(2, 1fr); }
+  .cats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .cats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .cat { padding: 16px; }
-  .perks, .reviews { grid-template-columns: 1fr; }
-  .stats { grid-template-columns: repeat(2, 1fr); padding: 24px 16px; }
-  .hero__visual { height: 330px; }
-  .hero__phone { width: 120px; height: 240px; }
-  .hero__phone--2 { width: 145px; height: 290px; }
-  .hero__float { font-size: 0.75rem; padding: 8px 12px; }
+  .cats { grid-template-columns: 1fr; }
+  .perks { grid-template-columns: 1fr; gap: 20px; }
   .hero__cta .btn { flex: 1 1 100%; }
+  .hero__facts div { padding-right: 16px; margin-right: 16px; }
+  .hero__facts dd { font-size: 1.15rem; }
+  .board__row { padding: 10px 14px; gap: 10px; }
+  .tabs { overflow-x: auto; max-width: 100%; }
+  .tab { white-space: nowrap; }
 }
 </style>
