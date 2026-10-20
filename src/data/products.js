@@ -470,5 +470,427 @@ export default [
     specs: { screen: '6,5" OLED 120 Hz 19,5:9', chip: 'Snapdragon 8 Elite', ram: 12, camera: '48 + 48 + 12 Mpx Zeiss', selfie: '12 Mpx', battery: '5 000 mAh', os: 'Android 15', network: '5G', sim: 'Dual SIM' },
     rating: 4.5, reviews: 15,
     description: 'Prise jack, lecteur microSD et zoom optique continu : pour les créateurs exigeants.'
+  },
+  // ═════════════ ARRIVAGES SUPPLÉMENTAIRES ═════════════
+  // ───── Apple ─────
+  {
+    id: 'iphone-16-pro-max', brand: 'apple', name: 'iPhone 16 Pro Max', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: ['promo'], mockup: 'apple-pro',
+    variants: [['256 Go', 840000, 920000], ['512 Go', 990000]],
+    colors: [['Titane désert', '#BFA48F'], ['Titane naturel', '#C2BCB2'], ['Titane noir', '#3C3C3D'], ['Titane blanc', '#F2F1ED']],
+    specs: { screen: '6,9" Super Retina XDR OLED 120 Hz', chip: 'Apple A18 Pro', ram: 8, camera: '48 + 48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 4 685 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.8, reviews: 256,
+    description: 'Le grand écran 6,9" en titane, zoom optique 5x et vidéo 4K 120 fps.'
+  },
+  {
+    id: 'iphone-16-pro', brand: 'apple', name: 'iPhone 16 Pro', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'apple-pro',
+    variants: [['128 Go', 690000], ['256 Go', 760000]],
+    colors: [['Titane désert', '#BFA48F'], ['Titane naturel', '#C2BCB2'], ['Titane noir', '#3C3C3D']],
+    specs: { screen: '6,3" Super Retina XDR OLED 120 Hz', chip: 'Apple A18 Pro', ram: 8, camera: '48 + 48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 580 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.8, reviews: 174,
+    description: 'Titane léger, puce A18 Pro et téléobjectif 5x dans un format compact.'
+  },
+  {
+    id: 'iphone-16-plus', brand: 'apple', name: 'iPhone 16 Plus', year: 2024,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'apple',
+    variants: [['128 Go', 600000], ['256 Go', 680000]],
+    colors: [['Outremer', '#7A8FD6'], ['Sarcelle', '#88B5B1'], ['Noir', '#232325']],
+    specs: { screen: '6,7" Super Retina XDR OLED', chip: 'Apple A18', ram: 8, camera: '48 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 4 670 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.7, reviews: 88,
+    description: 'Le grand écran d’Apple avec une autonomie exceptionnelle.'
+  },
+  {
+    id: 'iphone-16e', brand: 'apple', name: 'iPhone 16e', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: ['best-seller'], mockup: 'apple',
+    variants: [['128 Go', 430000], ['256 Go', 500000]],
+    colors: [['Noir', '#232325'], ['Blanc', '#F4F4F2']],
+    specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A18', ram: 8, camera: '48 Mpx Fusion', selfie: '12 Mpx', battery: '≈ 4 000 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.6, reviews: 143,
+    description: 'L’iPhone récent le plus abordable : puce A18, Apple Intelligence et grosse autonomie.'
+  },
+  {
+    id: 'iphone-14', brand: 'apple', name: 'iPhone 14', year: 2022,
+    condition: 'reconditionne', stock: 'en-stock', badges: ['best-seller'], mockup: 'apple',
+    variants: [['128 Go', 300000], ['256 Go', 345000]],
+    colors: [['Minuit', '#232A31'], ['Bleu', '#A3B6CB'], ['Violet', '#D7CCE2'], ['Lumière stellaire', '#F1EDE4']],
+    specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A15 Bionic', ram: 6, camera: '12 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 280 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.6, reviews: 265,
+    description: 'Reconditionné grade A, batterie testée > 85 %, garanti 6 mois.'
+  },
+  {
+    id: 'iphone-12', brand: 'apple', name: 'iPhone 12', year: 2020,
+    condition: 'reconditionne', stock: 'en-stock', badges: ['promo'], mockup: 'apple',
+    variants: [['64 Go', 175000, 195000], ['128 Go', 205000]],
+    colors: [['Noir', '#25272A'], ['Blanc', '#F3F2EF'], ['Bleu', '#2C4A6E'], ['Vert', '#D5E3D2']],
+    specs: { screen: '6,1" Super Retina XDR OLED', chip: 'Apple A14 Bionic', ram: 4, camera: '12 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 2 815 mAh', os: 'iOS 26', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.4, reviews: 318,
+    description: 'Écran OLED, 5G et design plat : un iPhone fiable à petit prix.'
+  },
+  {
+    id: 'iphone-11', brand: 'apple', name: 'iPhone 11', year: 2019,
+    condition: 'reconditionne', stock: 'en-stock', badges: [], mockup: 'apple',
+    variants: [['64 Go', 135000], ['128 Go', 155000]],
+    colors: [['Noir', '#25272A'], ['Blanc', '#F3F2EF'], ['Violet', '#D1C7E0'], ['Rouge', '#BF1E2E']],
+    specs: { screen: '6,1" Liquid Retina LCD', chip: 'Apple A13 Bionic', ram: 4, camera: '12 + 12 Mpx', selfie: '12 Mpx', battery: '≈ 3 110 mAh', os: 'iOS 26', network: '4G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.3, reviews: 402,
+    description: 'Le premier iPhone idéal : reconditionné, testé et garanti.'
+  },
+
+  // ───── Samsung ─────
+  {
+    id: 'galaxy-s25-edge', brand: 'samsung', name: 'Galaxy S25 Edge', year: 2025,
+    condition: 'neuf', stock: 'sur-commande', badges: ['nouveau'], mockup: 'apple',
+    variants: [['256 Go', 780000], ['512 Go', 870000]],
+    colors: [['Titane argent', '#C9CCCE'], ['Titane noir', '#2E3033'], ['Titane bleu glacé', '#B8C9D9']],
+    specs: { screen: '6,7" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Elite for Galaxy', ram: 12, camera: '200 + 12 Mpx', selfie: '12 Mpx', battery: '3 900 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
+    rating: 4.6, reviews: 34,
+    description: 'Le Galaxy le plus fin : 5,8 mm, 163 g et capteur 200 Mpx.'
+  },
+  {
+    id: 'galaxy-s25-plus', brand: 'samsung', name: 'Galaxy S25+', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'trio',
+    variants: [['256 Go', 690000], ['512 Go', 780000]],
+    colors: [['Marine', '#2A3550'], ['Bleu glacier', '#B9CCE0'], ['Argent', '#D9DADC']],
+    specs: { screen: '6,7" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Elite for Galaxy', ram: 12, camera: '50 + 12 + 10 Mpx', selfie: '12 Mpx', battery: '4 900 mAh · 45 W', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
+    rating: 4.7, reviews: 61,
+    description: 'Grand écran QHD+, charge 45 W et Galaxy AI.'
+  },
+  {
+    id: 'galaxy-s24-fe', brand: 'samsung', name: 'Galaxy S24 FE', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: ['promo'], mockup: 'trio',
+    variants: [['128 Go', 365000, 399000], ['256 Go', 405000]],
+    colors: [['Bleu', '#7C9CC4'], ['Graphite', '#3A3B3E'], ['Menthe', '#C8E1D3'], ['Jaune', '#F0E2A0']],
+    specs: { screen: '6,7" Dynamic AMOLED 2X 120 Hz', chip: 'Exynos 2400e', ram: 8, camera: '50 + 12 + 8 Mpx', selfie: '10 Mpx', battery: '4 700 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
+    rating: 4.5, reviews: 97,
+    description: 'L’expérience Galaxy S à prix accessible, avec 7 ans de mises à jour.'
+  },
+  {
+    id: 'galaxy-s23-ultra', brand: 'samsung', name: 'Galaxy S23 Ultra', year: 2023,
+    condition: 'reconditionne', stock: 'en-stock', badges: ['best-seller'], mockup: 'trio',
+    variants: [['256 Go', 455000], ['512 Go', 520000]],
+    colors: [['Noir fantôme', '#2B2C2F'], ['Crème', '#EDE6D6'], ['Vert', '#B9C6B0'], ['Lavande', '#D3C7E3']],
+    specs: { screen: '6,8" Dynamic AMOLED 2X 120 Hz', chip: 'Snapdragon 8 Gen 2 for Galaxy', ram: 12, camera: '200 + 12 + 10 + 10 Mpx', selfie: '12 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM + eSIM' },
+    rating: 4.7, reviews: 188,
+    description: 'Le photophone star avec S Pen, reconditionné grade A.'
+  },
+  {
+    id: 'galaxy-a26', brand: 'samsung', name: 'Galaxy A26 5G', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: ['nouveau'], mockup: 'trio',
+    variants: [['128 Go', 165000], ['256 Go', 185000]],
+    colors: [['Noir', '#2B2C2F'], ['Blanc', '#EDEDEF'], ['Rose', '#E8C9CF'], ['Menthe', '#C8E1D3']],
+    specs: { screen: '6,7" Super AMOLED 120 Hz', chip: 'Exynos 1380', ram: 8, camera: '50 + 8 + 2 Mpx', selfie: '13 Mpx', battery: '5 000 mAh', os: 'Android 15 · One UI 7', network: '5G', sim: 'Dual SIM' },
+    rating: 4.4, reviews: 76,
+    description: '5G, écran AMOLED et étanchéité IP67 pour un budget maîtrisé.'
+  },
+  {
+    id: 'galaxy-a06', brand: 'samsung', name: 'Galaxy A06', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'trio',
+    variants: [['64 Go', 68000], ['128 Go', 78000]],
+    colors: [['Noir', '#2B2C2F'], ['Bleu clair', '#B8CDE3'], ['Or', '#E3D3AE']],
+    specs: { screen: '6,7" PLS LCD', chip: 'MediaTek Helio G85', ram: 4, camera: '50 + 2 Mpx', selfie: '8 Mpx', battery: '5 000 mAh · 25 W', os: 'Android 15 · One UI 7', network: '4G', sim: 'Dual SIM' },
+    rating: 4.2, reviews: 154,
+    description: 'Le Samsung le plus accessible, avec grand écran et bonne autonomie.'
+  },
+
+  // ───── Xiaomi ─────
+  {
+    id: 'xiaomi-15t-pro', brand: 'xiaomi', name: 'Xiaomi 15T Pro', year: 2025,
+    condition: 'neuf', stock: 'sur-commande', badges: ['nouveau'], mockup: 'square',
+    variants: [['256 Go', 520000], ['512 Go', 580000]],
+    colors: [['Noir', '#1E1F21'], ['Gris', '#8E9196'], ['Or moka', '#BFA88A']],
+    specs: { screen: '6,83" AMOLED 144 Hz', chip: 'MediaTek Dimensity 9400+', ram: 12, camera: '50 + 50 + 12 Mpx Leica', selfie: '32 Mpx', battery: '5 500 mAh · 90 W', os: 'Android 15 · HyperOS 3', network: '5G', sim: 'Dual SIM + eSIM' },
+    rating: 4.6, reviews: 21,
+    description: 'Optiques Leica avec téléobjectif 5x et charge 90 W.'
+  },
+  {
+    id: 'redmi-note-14-pro-5g', brand: 'xiaomi', name: 'Redmi Note 14 Pro 5G', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'square',
+    variants: [['256 Go', 195000], ['512 Go', 225000]],
+    colors: [['Noir minuit', '#1F2024'], ['Violet lavande', '#B9A6D9'], ['Vert océan', '#4F8C82']],
+    specs: { screen: '6,67" AMOLED incurvé 120 Hz', chip: 'MediaTek Dimensity 7300-Ultra', ram: 8, camera: '200 + 8 + 2 Mpx', selfie: '20 Mpx', battery: '5 110 mAh · 45 W', os: 'Android 14 · HyperOS', network: '5G', sim: 'Dual SIM' },
+    rating: 4.5, reviews: 129,
+    description: '200 Mpx, écran incurvé et IP68 en version 5G.'
+  },
+  {
+    id: 'poco-x7-pro', brand: 'xiaomi', name: 'POCO X7 Pro', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: ['best-seller'], mockup: 'bar',
+    variants: [['256 Go', 215000], ['512 Go', 245000]],
+    colors: [['Jaune POCO', '#F2C200'], ['Noir', '#1E1F21'], ['Vert', '#4D6B55']],
+    specs: { screen: '6,67" AMOLED 120 Hz', chip: 'MediaTek Dimensity 8400-Ultra', ram: 12, camera: '50 + 8 Mpx', selfie: '20 Mpx', battery: '6 000 mAh · 90 W', os: 'Android 15 · HyperOS 2', network: '5G', sim: 'Dual SIM' },
+    rating: 4.6, reviews: 112,
+    description: 'Le roi du gaming à prix serré : puce surpuissante et 6 000 mAh.'
+  },
+  {
+    id: 'redmi-a5', brand: 'xiaomi', name: 'Redmi A5', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'circle',
+    variants: [['64 Go', 55000], ['128 Go', 62000]],
+    colors: [['Noir', '#202124'], ['Bleu lac', '#6E95B8'], ['Sable', '#D9C9A8']],
+    specs: { screen: '6,88" LCD 120 Hz', chip: 'Unisoc T7250', ram: 4, camera: '32 Mpx', selfie: '8 Mpx', battery: '5 200 mAh', os: 'Android 15 (Go)', network: '4G', sim: 'Dual SIM' },
+    rating: 4.1, reviews: 87,
+    description: 'Grand écran et batterie solide à tout petit prix.'
+  },
+
+  // ───── Tecno ─────
+  {
+    id: 'tecno-camon-40', brand: 'tecno', name: 'Camon 40', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'square',
+    variants: [['256 Go', 145000]],
+    colors: [['Noir galaxie', '#1E2026'], ['Vert émeraude', '#2F6B57'], ['Blanc glacier', '#EEF1F3']],
+    specs: { screen: '6,78" AMOLED 120 Hz', chip: 'MediaTek Helio G100 Ultimate', ram: 8, camera: '50 + 2 Mpx', selfie: '32 Mpx', battery: '5 200 mAh · 45 W', os: 'Android 15 · HiOS 15', network: '4G', sim: 'Dual SIM' },
+    rating: 4.4, reviews: 98,
+    description: 'Le style Camon et ses portraits IA à prix accessible.'
+  },
+  {
+    id: 'tecno-phantom-v-fold2', brand: 'tecno', name: 'Phantom V Fold2 5G', year: 2024,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'fold',
+    variants: [['512 Go', 690000]],
+    colors: [['Noir karst', '#1C1D20'], ['Vert rippling', '#3E5F55']],
+    specs: { screen: '7,85" pliable + 6,42" externe, 120 Hz', chip: 'MediaTek Dimensity 9000+', ram: 12, camera: '50 + 50 + 50 Mpx', selfie: '32 + 32 Mpx', battery: '5 750 mAh · 70 W', os: 'Android 14 · HiOS', network: '5G', sim: 'Dual SIM' },
+    rating: 4.4, reviews: 14,
+    description: 'Le pliable grand format le plus accessible, avec une énorme batterie.'
+  },
+  {
+    id: 'tecno-spark-go-2', brand: 'tecno', name: 'Spark Go 2', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: ['best-seller'], mockup: 'circle',
+    variants: [['64 Go', 52000], ['128 Go', 60000]],
+    colors: [['Noir encre', '#1D1E22'], ['Vert', '#6EA58A'], ['Blanc', '#F1F1EF']],
+    specs: { screen: '6,67" LCD 120 Hz', chip: 'Unisoc T7250', ram: 4, camera: '13 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 15 (Go)', network: '4G', sim: 'Dual SIM' },
+    rating: 4.1, reviews: 176,
+    description: 'Le premier smartphone idéal : fluide, résistant (IP64) et économique.'
+  },
+
+  // ───── Infinix ─────
+  {
+    id: 'infinix-gt-30-pro', brand: 'infinix', name: 'GT 30 Pro 5G', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: ['nouveau'], mockup: 'square',
+    variants: [['256 Go', 185000], ['512 Go', 210000]],
+    colors: [['Noir cyber', '#16171B'], ['Argent blade', '#C9CCD1']],
+    specs: { screen: '6,78" AMOLED 144 Hz', chip: 'MediaTek Dimensity 8350 Ultimate', ram: 12, camera: '108 + 2 Mpx', selfie: '13 Mpx', battery: '5 500 mAh · 45 W', os: 'Android 15 · XOS 15', network: '5G', sim: 'Dual SIM' },
+    rating: 4.5, reviews: 58,
+    description: 'Gâchettes gaming intégrées, LED Mecha et 144 Hz pour les joueurs.'
+  },
+  {
+    id: 'infinix-note-50', brand: 'infinix', name: 'Note 50', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'circle',
+    variants: [['256 Go', 128000]],
+    colors: [['Noir', '#1E1F22'], ['Vert', '#5E8C74'], ['Violet', '#8E7BBE']],
+    specs: { screen: '6,78" AMOLED 144 Hz', chip: 'MediaTek Helio G100 Ultimate', ram: 8, camera: '50 + 2 Mpx', selfie: '13 Mpx', battery: '5 200 mAh · 45 W', os: 'Android 15 · XOS 15', network: '4G', sim: 'Dual SIM' },
+    rating: 4.3, reviews: 84,
+    description: 'Écran AMOLED 144 Hz et design métal à prix doux.'
+  },
+  {
+    id: 'infinix-smart-10', brand: 'infinix', name: 'Smart 10', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'circle',
+    variants: [['64 Go', 50000], ['128 Go', 58000]],
+    colors: [['Noir', '#1E1F22'], ['Bleu', '#4B7FC1'], ['Argent', '#C9CCD1']],
+    specs: { screen: '6,67" LCD 120 Hz', chip: 'Unisoc T7250', ram: 4, camera: '8 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 15 (Go)', network: '4G', sim: 'Dual SIM' },
+    rating: 4.0, reviews: 102,
+    description: 'Simple, solide et abordable, idéal comme premier smartphone.'
+  },
+
+  // ───── itel ─────
+  {
+    id: 'itel-a90', brand: 'itel', name: 'A90', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'circle',
+    variants: [['64 Go', 45000], ['128 Go', 52000]],
+    colors: [['Noir', '#1D1E21'], ['Bleu', '#3E6FB0'], ['Or', '#D2BD8E']],
+    specs: { screen: '6,6" LCD 90 Hz', chip: 'Unisoc T7100', ram: 4, camera: '13 Mpx', selfie: '5 Mpx', battery: '5 000 mAh', os: 'Android 14 (Go)', network: '4G', sim: 'Dual SIM' },
+    rating: 4.0, reviews: 141,
+    description: 'Résistant (IP54), grand écran et prix mini.'
+  },
+  {
+    id: 'itel-p65', brand: 'itel', name: 'P65', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'square',
+    variants: [['128 Go', 68000], ['256 Go', 78000]],
+    colors: [['Noir', '#1D1E21'], ['Vert', '#7FA58A']],
+    specs: { screen: '6,67" LCD 120 Hz', chip: 'Unisoc T606', ram: 4, camera: '50 Mpx', selfie: '8 Mpx', battery: '6 000 mAh', os: 'Android 14', network: '4G', sim: 'Dual SIM' },
+    rating: 4.1, reviews: 66,
+    description: 'Batterie de 6 000 mAh pour tenir deux jours.'
+  },
+
+  // ───── Google ─────
+  {
+    id: 'pixel-9-pro', brand: 'google', name: 'Pixel 9 Pro', year: 2024,
+    condition: 'reconditionne', stock: 'en-stock', badges: [], mockup: 'visor',
+    variants: [['128 Go', 470000], ['256 Go', 520000]],
+    colors: [['Obsidienne', '#1F2022'], ['Porcelaine', '#ECE7DF'], ['Quartz rose', '#E8C9C6']],
+    specs: { screen: '6,3" Super Actua LTPO 120 Hz', chip: 'Google Tensor G4', ram: 16, camera: '50 + 48 + 48 Mpx', selfie: '42 Mpx', battery: '4 700 mAh', os: 'Android 16', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.6, reviews: 47,
+    description: 'Reconditionné grade A : photo Pixel de référence et 16 Go de RAM.'
+  },
+  {
+    id: 'pixel-8', brand: 'google', name: 'Pixel 8', year: 2023,
+    condition: 'reconditionne', stock: 'en-stock', badges: ['promo'], mockup: 'visor',
+    variants: [['128 Go', 255000, 285000]],
+    colors: [['Obsidienne', '#1F2022'], ['Menthe', '#C9E3D3'], ['Rose', '#EDC9C3']],
+    specs: { screen: '6,2" Actua OLED 120 Hz', chip: 'Google Tensor G3', ram: 8, camera: '50 + 12 Mpx', selfie: '10,5 Mpx', battery: '4 575 mAh', os: 'Android 16', network: '5G', sim: 'Nano-SIM + eSIM' },
+    rating: 4.4, reviews: 59,
+    description: 'Compact, mises à jour jusqu’en 2030 et photo nocturne bluffante.'
+  },
+
+  // ───── Huawei ─────
+  {
+    id: 'huawei-nova-13-pro', brand: 'huawei', name: 'nova 13 Pro', year: 2024,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'circle',
+    variants: [['512 Go', 395000]],
+    colors: [['Noir', '#1C1C1E'], ['Violet', '#9C86C2'], ['Vert', '#8DAE9A']],
+    specs: { screen: '6,76" OLED quad-incurvé 120 Hz', chip: 'Kirin 8000', ram: 12, camera: '50 + 12 + 8 Mpx', selfie: '60 + 8 Mpx', battery: '5 000 mAh · 100 W', os: 'EMUI 15', network: '4G', sim: 'Dual SIM' },
+    rating: 4.4, reviews: 19,
+    description: 'Double caméra selfie 60 Mpx et téléobjectif portrait.'
+  },
+
+  // ───── Oppo ─────
+  {
+    id: 'oppo-find-x8-pro', brand: 'oppo', name: 'Find X8 Pro', year: 2024,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'circle',
+    variants: [['512 Go', 790000]],
+    colors: [['Noir spatial', '#1E1F23'], ['Blanc perle', '#F0EEEA']],
+    specs: { screen: '6,78" AMOLED LTPO 120 Hz', chip: 'MediaTek Dimensity 9400', ram: 16, camera: '50 + 50 + 50 + 50 Mpx Hasselblad', selfie: '32 Mpx', battery: '5 910 mAh · 80 W', os: 'Android 15 · ColorOS 15', network: '5G', sim: 'Dual SIM' },
+    rating: 4.7, reviews: 23,
+    description: 'Quatre capteurs 50 Mpx Hasselblad dont deux périscopes.'
+  },
+  {
+    id: 'oppo-reno-13-f', brand: 'oppo', name: 'Reno13 F', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'square',
+    variants: [['256 Go', 205000]],
+    colors: [['Violet lumineux', '#A893C9'], ['Gris graphite', '#4A4C52']],
+    specs: { screen: '6,67" AMOLED 120 Hz', chip: 'MediaTek Helio G100', ram: 8, camera: '50 + 8 + 2 Mpx', selfie: '32 Mpx', battery: '5 800 mAh · 45 W', os: 'Android 15 · ColorOS 15', network: '4G', sim: 'Dual SIM' },
+    rating: 4.3, reviews: 44,
+    description: 'Étanche IP69, portraits IA et grosse batterie.'
+  },
+
+  // ───── Vivo ─────
+  {
+    id: 'vivo-x200-pro', brand: 'vivo', name: 'X200 Pro', year: 2024,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'circle',
+    variants: [['512 Go', 780000]],
+    colors: [['Noir cosmos', '#1D1E22'], ['Titane', '#B7B2A9']],
+    specs: { screen: '6,78" AMOLED LTPO 120 Hz', chip: 'MediaTek Dimensity 9400', ram: 16, camera: '50 + 50 + 200 Mpx Zeiss', selfie: '32 Mpx', battery: '6 000 mAh · 90 W', os: 'Android 15 · Funtouch OS 15', network: '5G', sim: 'Dual SIM' },
+    rating: 4.7, reviews: 18,
+    description: 'Téléobjectif 200 Mpx Zeiss : un monstre de la photo.'
+  },
+  {
+    id: 'vivo-y19s', brand: 'vivo', name: 'Y19s', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'circle',
+    variants: [['128 Go', 82000]],
+    colors: [['Noir brillant', '#1F2023'], ['Argent', '#C9CCD1']],
+    specs: { screen: '6,68" LCD 90 Hz', chip: 'Unisoc T612', ram: 4, camera: '50 Mpx', selfie: '5 Mpx', battery: '5 500 mAh', os: 'Android 14 · Funtouch OS 14', network: '4G', sim: 'Dual SIM' },
+    rating: 4.1, reviews: 52,
+    description: 'Robuste (IP64), grande batterie et son puissant.'
+  },
+
+  // ───── Realme ─────
+  {
+    id: 'realme-gt-7-pro', brand: 'realme', name: 'GT 7 Pro', year: 2025,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'square',
+    variants: [['512 Go', 520000]],
+    colors: [['Titane lunaire', '#B8B4AC'], ['Orange Mars', '#D9662B']],
+    specs: { screen: '6,78" AMOLED 120 Hz', chip: 'Snapdragon 8 Elite', ram: 12, camera: '50 + 50 + 8 Mpx', selfie: '16 Mpx', battery: '5 800 mAh · 120 W', os: 'Android 15 · realme UI 6', network: '5G', sim: 'Dual SIM' },
+    rating: 4.5, reviews: 16,
+    description: 'Snapdragon 8 Elite et charge 120 W à prix agressif.'
+  },
+  {
+    id: 'realme-note-60', brand: 'realme', name: 'Note 60', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'square',
+    variants: [['128 Go', 62000]],
+    colors: [['Noir marbre', '#202226'], ['Bleu voyage', '#4E7DB5']],
+    specs: { screen: '6,74" LCD 90 Hz', chip: 'Unisoc T612', ram: 4, camera: '32 Mpx', selfie: '5 Mpx', battery: '5 000 mAh', os: 'Android 14 · realme UI', network: '4G', sim: 'Dual SIM' },
+    rating: 4.0, reviews: 47,
+    description: 'Châssis métal, IP64 et petit prix.'
+  },
+
+  // ───── OnePlus ─────
+  {
+    id: 'oneplus-nord-5', brand: 'oneplus', name: 'Nord 5', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: ['nouveau'], mockup: 'bar',
+    variants: [['256 Go', 315000], ['512 Go', 355000]],
+    colors: [['Noir fantôme', '#1E1F22'], ['Gris sec', '#9EA0A3'], ['Bleu marbre', '#8EA7C9']],
+    specs: { screen: '6,83" AMOLED 144 Hz', chip: 'Snapdragon 8s Gen 3', ram: 12, camera: '50 + 8 Mpx', selfie: '50 Mpx', battery: '6 800 mAh · 80 W', os: 'Android 15 · OxygenOS 15', network: '5G', sim: 'Dual SIM' },
+    rating: 4.5, reviews: 26,
+    description: 'Batterie géante de 6 800 mAh et performances de flagship.'
+  },
+  {
+    id: 'oneplus-13r', brand: 'oneplus', name: 'OnePlus 13R', year: 2025,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'circle',
+    variants: [['256 Go', 410000]],
+    colors: [['Nebula Noir', '#1D1E22'], ['Astral Trail', '#C9C6BF']],
+    specs: { screen: '6,78" AMOLED LTPO 120 Hz', chip: 'Snapdragon 8 Gen 3', ram: 12, camera: '50 + 50 + 8 Mpx', selfie: '16 Mpx', battery: '6 000 mAh · 80 W', os: 'Android 15 · OxygenOS 15', network: '5G', sim: 'Dual SIM' },
+    rating: 4.5, reviews: 22,
+    description: 'Le flagship killer : puissance haut de gamme à prix contenu.'
+  },
+
+  // ───── Honor ─────
+  {
+    id: 'honor-magic7-pro', brand: 'honor', name: 'Magic7 Pro', year: 2025,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'circle',
+    variants: [['512 Go', 760000]],
+    colors: [['Noir', '#1D1E21'], ['Gris lunaire', '#B4B7BC'], ['Bleu', '#3B5B8A']],
+    specs: { screen: '6,8" OLED LTPO 120 Hz', chip: 'Snapdragon 8 Elite', ram: 12, camera: '50 + 50 + 200 Mpx', selfie: '50 Mpx', battery: '5 270 mAh · 100 W', os: 'Android 15 · MagicOS 9', network: '5G', sim: 'Dual SIM' },
+    rating: 4.6, reviews: 17,
+    description: 'Périscope 200 Mpx, écran ultra-lumineux et IA photo.'
+  },
+  {
+    id: 'honor-x7c', brand: 'honor', name: 'X7c', year: 2024,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'circle',
+    variants: [['128 Go', 98000], ['256 Go', 112000]],
+    colors: [['Noir minuit', '#1D1E21'], ['Vert forêt', '#3E6B55'], ['Blanc', '#EDEDEF']],
+    specs: { screen: '6,77" LCD 120 Hz', chip: 'Snapdragon 685', ram: 8, camera: '108 + 2 Mpx', selfie: '8 Mpx', battery: '6 000 mAh · 35 W', os: 'Android 14 · MagicOS 8', network: '4G', sim: 'Dual SIM' },
+    rating: 4.2, reviews: 49,
+    description: 'Résistant aux chutes, 108 Mpx et batterie 6 000 mAh.'
+  },
+
+  // ───── Motorola ─────
+  {
+    id: 'motorola-razr-60-ultra', brand: 'motorola', name: 'Razr 60 Ultra', year: 2025,
+    condition: 'neuf', stock: 'sur-commande', badges: ['nouveau'], mockup: 'flip',
+    variants: [['512 Go', 690000]],
+    colors: [['Pantone Rio Red', '#A3262A'], ['Pantone Mountain Trail', '#4A5A3E'], ['Pantone Scarab', '#2C4A4C']],
+    specs: { screen: '7" pliable + 4" externe, 165 Hz', chip: 'Snapdragon 8 Elite', ram: 16, camera: '50 + 50 Mpx', selfie: '50 Mpx', battery: '4 700 mAh · 68 W', os: 'Android 15', network: '5G', sim: 'Dual SIM + eSIM' },
+    rating: 4.6, reviews: 15,
+    description: 'Le clapet le plus puissant du marché, finitions bois ou cuir.'
+  },
+  {
+    id: 'moto-g05', brand: 'motorola', name: 'Moto G05', year: 2025,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'square',
+    variants: [['128 Go', 72000]],
+    colors: [['Pantone Forest Green', '#2F5A45'], ['Pantone Plum Red', '#7E2E46']],
+    specs: { screen: '6,67" LCD 90 Hz', chip: 'MediaTek Helio G81 Extreme', ram: 4, camera: '50 Mpx', selfie: '8 Mpx', battery: '5 200 mAh', os: 'Android 15', network: '4G', sim: 'Dual SIM' },
+    rating: 4.1, reviews: 38,
+    description: 'Android 15 pur, son Dolby Atmos et finition cuir végan.'
+  },
+
+  // ───── Nokia ─────
+  {
+    id: 'nokia-c32', brand: 'nokia', name: 'Nokia C32', year: 2023,
+    condition: 'neuf', stock: 'en-stock', badges: [], mockup: 'bar',
+    variants: [['64 Go', 62000], ['128 Go', 70000]],
+    colors: [['Charbon', '#2E3033'], ['Vert automne', '#7A8A6A'], ['Rose plage', '#E5C3BF']],
+    specs: { screen: '6,5" LCD', chip: 'Unisoc SC9863A1', ram: 4, camera: '50 + 2 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 13', network: '4G', sim: 'Dual SIM' },
+    rating: 4.0, reviews: 29,
+    description: 'Dos en verre trempé, IP52 et autonomie de 3 jours.'
+  },
+
+  // ───── Nothing ─────
+  {
+    id: 'nothing-phone-3', brand: 'nothing', name: 'Phone (3)', year: 2025,
+    condition: 'neuf', stock: 'sur-commande', badges: ['nouveau'], mockup: 'square',
+    variants: [['256 Go', 560000], ['512 Go', 620000]],
+    colors: [['Noir', '#1A1A1A'], ['Blanc', '#EDEDED']],
+    specs: { screen: '6,67" AMOLED 120 Hz', chip: 'Snapdragon 8s Gen 4', ram: 12, camera: '50 + 50 + 50 Mpx', selfie: '50 Mpx', battery: '5 150 mAh · 65 W', os: 'Android 15 · Nothing OS 3.5', network: '5G', sim: 'Dual SIM' },
+    rating: 4.5, reviews: 12,
+    description: 'Le premier flagship Nothing avec la Glyph Matrix au dos.'
+  },
+
+  // ───── Sony ─────
+  {
+    id: 'sony-xperia-10-vi', brand: 'sony', name: 'Xperia 10 VI', year: 2024,
+    condition: 'neuf', stock: 'sur-commande', badges: [], mockup: 'bar',
+    variants: [['128 Go', 285000]],
+    colors: [['Noir', '#26282B'], ['Blanc', '#EDEDEF'], ['Bleu', '#6F8FB5']],
+    specs: { screen: '6,1" OLED 21:9', chip: 'Snapdragon 6 Gen 1', ram: 8, camera: '48 + 8 Mpx', selfie: '8 Mpx', battery: '5 000 mAh', os: 'Android 15', network: '5G', sim: 'Dual SIM' },
+    rating: 4.2, reviews: 11,
+    description: 'Léger, prise jack et autonomie record de 2 jours.'
   }
+
 ]

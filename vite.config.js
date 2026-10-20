@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
   const siteUrl = (env.VITE_SITE_URL || 'https://the-smart-boutique.vercel.app').replace(/\/$/, '')
 
   return {
+    base: env.VITE_BASE || '/',
     plugins: [
       vue(),
       // Remplace __SITE_URL__ dans index.html (URLs absolues pour le partage sur les réseaux sociaux)

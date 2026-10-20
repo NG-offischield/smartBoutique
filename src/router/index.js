@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import HomeView from '@/views/pages/HomeView.vue'
 
 const routes = [
@@ -15,7 +15,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  // Mode « hash » uniquement pour les aperçus hébergés hors Vercel (VITE_ROUTER_MODE=hash)
+  history: import.meta.env.VITE_ROUTER_MODE === 'hash' ? createWebHashHistory() : createWebHistory(),
   routes,
   scrollBehavior(to, from, saved) {
     if (saved) return saved

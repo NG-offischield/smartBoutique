@@ -12,7 +12,7 @@ Toutes les grandes marques (Apple, Samsung, Xiaomi, Tecno, Infinix, itel, Google
 | Côté visiteur | Côté technique |
 | --- | --- |
 | Accueil animé (hero, marques défilantes, catégories, sélection à onglets, avis, FAQ) | Vue 3 + Vite (moteur léger, moins de 80 Ko de JavaScript compressé pour la page d’accueil) |
-| Catalogue de **47 téléphones / 17 marques** avec recherche, filtres (marque, budget, état, RAM, stockage, 5G, promo, stock), tri et pagination | Architecture **MVC** (modèles, contrôleurs, vues) |
+| Catalogue de **90 téléphones / 17 marques** avec recherche, filtres (marque, budget, état, RAM, stockage, 5G, promo, stock), tri et pagination | Architecture **MVC** (modèles, contrôleurs, vues) |
 | Filtres enregistrés dans l’URL (partageables, bouton retour fonctionnel) | Pages chargées à la demande (code-splitting) |
 | Fiche produit : choix couleur + stockage, prix dynamique, fiche technique, produits similaires | SEO : balises meta/Open Graph, données structurées Google (magasin + produits), sitemap.xml et robots.txt générés automatiquement |
 | **Commande WhatsApp pré-remplie** (modèle, couleur, stockage, prix) | Accessibilité (WCAG) : navigation clavier, lien d’évitement, ARIA, contrastes, `prefers-reduced-motion` |
@@ -59,7 +59,7 @@ Après modification sur GitHub (même directement depuis le navigateur, bouton �
 
 ```js
 {
-  id: 'galaxy-a26', brand: 'samsung', name: 'Galaxy A26 5G', year: 2025,
+  id: 'galaxy-a17', brand: 'samsung', name: 'Galaxy A17 5G', year: 2025,
   condition: 'neuf', stock: 'en-stock', badges: ['nouveau'], mockup: 'trio',
   variants: [['128 Go', 165000], ['256 Go', 185000, 199000]],   // [stockage, prix, ancien prix si promo]
   colors: [['Noir', '#1F2023'], ['Blanc', '#F2F2F0']],
@@ -102,7 +102,7 @@ Le logo associe un **smartphone** et un **sac de boutique** formant un « S », 
 ## 💼 Fiche portfolio
 
 > **The Smart Boutique — Site vitrine e-commerce (2026)**
-> Site vitrine responsive pour une boutique de smartphones à Yaoundé : catalogue de 47 modèles / 17 marques avec recherche instantanée, filtres combinables synchronisés à l’URL, comparateur, favoris, thème sombre et commande via WhatsApp pré-remplie.
+> Site vitrine responsive pour une boutique de smartphones à Yaoundé : catalogue de 90 modèles / 17 marques avec recherche instantanée, filtres combinables synchronisés à l’URL, comparateur, favoris, thème sombre et commande via WhatsApp pré-remplie.
 > **Stack :** Vue 3, Vite, Vue Router, architecture MVC, CSS natif (design system à variables), Vitest, déploiement Vercel.
 > **Points forts :** accessibilité WCAG, SEO (données structurées, sitemap), illustrations SVG générées dynamiquement, aucun backend nécessaire.
 
